@@ -274,24 +274,128 @@ nav {
 }
 
 .vendedor-card {
-    background: var(--light);
-    border: 1px solid #eee;
+    background: linear-gradient(135deg, var(--primary) 0%, #ffcf5479 100%);
     border-radius: 20px;
     padding: 40px 30px;
     transition: var(--transition);
+    text-align: left;
 }
-
+.btn-whatsapp{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 20px;
+}
 .vendedor-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.1);
     border-color: var(--primary);
 }
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
-/* Responsividade */
+.footer {
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 20px 5%;
+    margin-top: 60px;
+}
+.footer-logo {
+    font-size: 0.8 rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+.footer-logo span { color: var(--light); }
+
+/* ==========================================================================
+   AJUSTES DE RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .hero { height: 90vh; }
-    .hero-content { padding: 20px; }
-    .hero-btns { flex-direction: column; width: 100%; }
-    .btn-primary, .btn-outline { width: 100%; text-align: center; }
-    .video-wrapper { border-radius: 10px; margin: 20px auto; }
+    /* 1. Menu de Navegação */
+    nav {
+        flex-direction: column; /* Coloca o logo em cima e links embaixo */
+        gap: 15px;
+        padding: 15px 2%;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    /* 2. Hero Section */
+    .hero {
+        height: 100vh; /* Ocupa a tela toda no celular */
+    }
+    
+    .hero-content {
+        padding: 15px;
+        width: 95%;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem; /* Diminui o título para não quebrar feio */
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-btns {
+        flex-direction: column; /* Botões um em cima do outro */
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 100%; /* Botões ocupam a largura toda */
+        text-align: center;
+        padding: 14px;
+    }
+
+    /* 3. Seções de Conteúdo */
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    
+    /* Ajuste da seção Malha Leila para empilhar no celular */
+    #malha-leila > div {
+        flex-direction: column !important;
+        gap: 30px !important;
+        text-align: center;
+    }
+    
+    #malha-leila ul {
+        text-align: left;
+        display: inline-block;
+    }
+        .vendedores-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .vendedor-card {
+        padding: 25px 20px;
+    }
 }
