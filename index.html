@@ -1,85 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>A'Veloz Ind Têxtil - Showroom Digital</title>
- <link rel="icon" type="image/png" href="img/logo-aveloz.png">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A'Veloz Ind Têxtil - Showroom Digital</title>
+    <link rel="icon" type="image/png" href="img/logo-aveloz.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
- <nav>
- <a href="index.html" class="logo">A'VELOZ <span>IND TÊXTIL</span></a>
- <div class="nav-links">
- <a href="index.html">Início</a>
- <a href="#showroom">Showroom</a>
- <a href="#novidades">Novidades</a>
- <a href="vendedores.html">Vendedores</a>
- </div>
- </nav>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">A'VELOZ <span>IND TÊXTIL</span></a>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="#showroom">Showroom</a>
+            <a href="#novidades">Novidades</a>
+            <a href="vendedores.html">Vendedores</a>
+        </div>
+    </nav>
 
- <section class="hero">
- <h1 class="hero-title">Qualidade que se sente no toque.</h1>
- <p class="hero-subtitle">Fabricante líder em Santa Cruz do Capibaribe. Malhas exclusivas, estampas modernas e o melhor preço do mercado têxtil.</p>
- <a href="vendedores.html" class="btn-primary">Falar com um Consultor</a>
- </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('img/estampa1.jpg')"></div>
+            <div class="slide" style="background-image: url('img/estampa2.jpg')"></div>
+            <div class="slide" style="background-image: url('img/estampa3.webp')"></div>
+            <div class="slide" style="background-image: url('img/estampa4.jpg')"></div>
+            <div class="slide" style="background-image: url('img/estampa5.jpg')"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Qualidade que se sente no toque.</h1>
+            <p class="hero-subtitle">Fabricante líder em Santa Cruz do Capibaribe. Malhas exclusivas, estampas modernas e o melhor preço do mercado têxtil.</p>
+            <div class="hero-btns">
+                <a href="vendedores.html" class="btn-primary">Falar com um Consultor</a>
+                <a href="#showroom" class="btn-outline">Confira nosso Catálogo</a>
+            </div>
+        </div>
+    </section>
 
- <section class="section" id="showroom">
- <h2 class="section-title">Nossas Coleções em Vídeo</h2>
- <div class="video-wrapper">
- <iframe src="https://www.youtube.com/embed/videoseries?list=PLiXtcNZ1jC69z5kQkK9BK-v-yqbcELC0P" 
- title="Aveloz Showroom" 
- allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
- allowfullscreen>
- </iframe>
- </div>
- <p style="text-align: center; margin-top: 20px; color: var(--text-muted);">Assista às nossas últimas novidades direto da fábrica.</p>
- </section>
+    <!-- Seção Malha Leila (Autoridade) -->
+    <section class="section" id="malha-leila" style="background: var(--gray);">
+        <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
+            <div style="flex: 1; min-width: 300px;">
+                <img src="img/malha-leila-destaque.jpg" alt="Malha Leila Original" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">A Autêntica Malha Leila</h2>
+                <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 1.1rem;">
+                    Cuidado com imitações. A A'Veloz Têxtil é a criadora e fabricante oficial da legítima Malha Leila. 
+                    Utilizamos fios nobres selecionados para garantir o toque e a durabilidade que sua confecção merece.
+                </p>
+                <ul style="list-style: none; margin-bottom: 30px;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Fios de Alta Torção
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Cores que não desbotam
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Pronta entrega para todo o Brasil
+                    </li>
+                </ul>
+                <a href="#showroom" class="btn-primary">Ver Catálogo de Cores</a>
+            </div>
+        </div>
+    </section>
 
- <section class="section" id="novidades" style="background: var(--gray);">
- <h2 class="section-title">Novidades no Instagram</h2>
- <p style="text-align: center; color: var(--text-muted);">Siga nosso perfil e acompanhe os lançamentos diários.</p>
- 
- <div class="insta-placeholder">
- <i class="fa-brands fa-instagram" style="font-size: 4rem; margin-bottom: 20px;"></i>
- <p>Aqui aparecerá o seu Feed do Instagram automaticamente.</p>
- <small>Dica: Use o behold.so ou elfsight.com para gerar o widget gratuito.</small>
- </div>
+    <!-- Showroom Section (Vídeos) -->
+    <section class="section" id="showroom">
+        <h2 class="section-title">Nossas Coleções em Vídeo</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLiXtcNZ1jC69z5kQkK9BK-v-yqbcELC0P" 
+            title="Aveloz Showroom" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+            </iframe>
+        </div>
+        <p style="text-align: center; margin-top: 25px; color: var(--text-muted);">Assista às nossas últimas novidades direto da fábrica.</p>
+    </section>
 
- <div class="features">
- <div class="feature-card">
- <i class="fa-solid fa-industry"></i>
- <h3>Direto da Fábrica</h3>
- <p>Preços competitivos e controle total de qualidade em cada metro de tecido.</p>
- </div>
- <div class="feature-card">
- <i class="fa-solid fa-truck-fast"></i>
- <h3>Envio Agilizado</h3>
- <p>Logística eficiente para todo o Brasil, garantindo que sua produção não pare.</p>
- </div>
- <div class="feature-card">
- <i class="fa-solid fa-award"></i>
- <h3>Malha Leila Original</h3>
- <p>O artigo mais desejado do mercado com a garantia de procedência A'Veloz.</p>
- </div>
- </div>
- </section>
+    <!-- Novidades Section (Instagram) -->
+    <section class="section" id="novidades" style="background: var(--gray);">
+        <h2 class="section-title">Novidades no Instagram</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Siga nosso perfil e acompanhe os lançamentos diários.</p>
+        
+        <div class="insta-placeholder">
+            <i class="fa-brands fa-instagram" style="font-size: 4rem; margin-bottom: 20px; color: var(--primary);"></i>
+            <p style="font-weight: 600;">Aqui aparecerá o seu Feed do Instagram automaticamente.</p>
+            <small>Dica: Use o behold.so ou elfsight.com para gerar o widget gratuito.</small>
+        </div>
+    </section>
 
- <footer>
- <a href="#" class="footer-logo">A'VELOZ <span>TÊXTIL</span></a>
- <p>Santa Cruz do Capibaribe - PE</p>
- <div class="copyright">
- &copy; 2026 A'Veloz Têxtil - Todos os direitos reservados. <br>
- Tecnologia e Design por <a href="https://devalbk.com.br" target="_blank" class="footer-link">DEV ALBK</a>
- </div>
- </footer>
+    <!-- Diferenciais -->
+    <section class="section">
+        <h2 class="section-title">Excelência em cada detalhe</h2>
+        <div class="features">
+            <div class="feature-card">
+                <i class="fa-solid fa-industry"></i>
+                <h3>Direto da Fábrica</h3>
+                <p>Preços competitivos e controle total de qualidade em cada metro de tecido.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Envio Agilizado</h3>
+                <p>Logística eficiente para todo o Brasil, garantindo que sua produção não pare.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-award"></i>
+                <h3>Malha Leila Original</h3>
+                <p>O artigo mais desejado do mercado com a garantia de procedência A'Veloz.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section" style="background: var(--gray);">
+        <h2 class="section-title">O que dizem nossos parceiros</h2>
+        <div class="vendedores-grid">
+            <div class="vendedor-card" style="text-align: left; padding: 30px;">
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A qualidade da Malha Leila da A'Veloz é o diferencial das minhas coleções. Atendimento nota 10!"</p>
+                <strong>Mariana Ribeiro</strong>
+                <small style="display: block; color: var(--primary); margin-top: 5px;">Fabricante de Moda Feminina</small>
+            </div>
+            <div class="vendedor-card" style="text-align: left; padding: 30px;">
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"Fornecedor de confiança há anos. A agilidade na entrega para o atacado é impressionante."</p>
+                <strong>Paulo Henrique</strong>
+                <small style="display: block; color: var(--primary); margin-top: 5px;">Confecção Infantil</small>
+            </div>
+            <div class="vendedor-card" style="text-align: left; padding: 30px;">
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A rapidez na entrega e a atenção ao detalhe fazem da A'Veloz Têxtil a minha loja favorita para compras de tecidos."</p>
+                <strong>Juliana Porto Ferreira</strong>
+                <small style="display: block; color: var(--primary); margin-top: 5px;">Fabricante de Moda Feminina</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--dark); color: white; padding: 80px 5% 40px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto 60px; text-align: left;">
+            <div>
+                <a href="index.html" class="logo" style="font-size: 24px;">A'VELOZ <span style="color: var(--primary);">TÊXTIL</span></a>
+                <p style="margin-top: 25px; color: #aaa; line-height: 1.8;">Há mais de uma década tecendo qualidade e inovação direto de Santa Cruz do Capibaribe para todo o Brasil.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">Institucional</h4>
+                <p style="color: #aaa; font-size: 14px; line-height: 2.2;">
+                    CNPJ: 07.573.578/0001-86<br>
+                    A'Veloz Indústria Têxtil LTDA<br>
+                    Santa Cruz do Capibaribe - PE
+                </p>
+            </div>
+            <div>
+                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">Redes Sociais</h4>
+                <div style="display: flex; gap: 20px;">
+                    <a href="https://instagram.com/aveloztextil" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/aveloz.textil/" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@aveloztextil" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; text-align: center; color: #666; font-size: 13px; padding-top: 40px;">
+            &copy; 2026 A'Veloz Têxtil - Todos os direitos reservados. <br>
+            Tecnologia e Design por <a href="https://devalbk.com.br" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">DEV ALBK</a>
+        </div>
+    </footer>
+
+    <!-- Slider Script -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            if(slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }
+
+        if(slides.length > 1) {
+            setInterval(nextSlide, 5000);
+        }
+    </script>
 
 </body>
 </html>
