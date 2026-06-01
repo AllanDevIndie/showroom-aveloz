@@ -79,6 +79,48 @@ img {
     background: #000;
 }
 
+.hero { margin-bottom: 40px; }
+
+/* Malha Leila Slider */
+.malha-slider {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden; /* evita que slides vazem sobre outros blocos */
+    max-height: 460px; /* limita altura para evitar crescimento excessivo */
+    min-height: 360px; /* garante altura do contêiner para não colapsar */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #f5f5f5;
+}
+
+.malha-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    padding: 12px; /* garante espaçamento interno sem overflow */
+    box-sizing: border-box;
+}
+
+.malha-slide.active {
+    opacity: 1;
+}
+
+.malha-slide img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .malha-slider { max-height: 50vh; }
+}
+
 .hero-slider {
     position: absolute;
     top: 0;
@@ -188,6 +230,10 @@ img {
     padding: 80px 5%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+#malha-leila {
+    margin-top: 60px;
 }
 
 .section-title {

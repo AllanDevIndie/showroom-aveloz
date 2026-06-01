@@ -56,7 +56,11 @@
     <section class="section" id="malha-leila" style="background: var(--gray);">
         <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
             <div style="flex: 1; min-width: 300px;">
-                <img src="img/malha-leila-destaque.jpg" alt="Malha Leila Original" style="width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <div class="malha-slider">
+                    <div class="malha-slide active"><img src="img/malha-leila-destaque.jpg" alt="Malha Leila Original"></div>
+                    <div class="malha-slide"><img src="img/malha-leila-destaque2.jpg" alt="Malha Leila Destaque 2"></div>
+                    <div class="malha-slide"><img src="img/malha-leila-destaque3.jpg" alt="Malha Leila Destaque 3"></div>
+                </div>
             </div>
             <div style="flex: 1; min-width: 300px;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 20px;">A Autêntica Malha Leila</h2>
@@ -194,6 +198,21 @@
 
         if(slides.length > 1) {
             setInterval(nextSlide, 5000);
+        }
+
+        const malhaSlides = document.querySelectorAll('.malha-slide');
+        let malhaCurrent = 0;
+
+        function nextMalhaSlide() {
+            if (malhaSlides.length > 0) {
+                malhaSlides[malhaCurrent].classList.remove('active');
+                malhaCurrent = (malhaCurrent + 1) % malhaSlides.length;
+                malhaSlides[malhaCurrent].classList.add('active');
+            }
+        }
+
+        if (malhaSlides.length > 1) {
+            setInterval(nextMalhaSlide, 5000);
         }
     </script>
 
