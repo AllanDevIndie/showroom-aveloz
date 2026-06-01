@@ -17,6 +17,7 @@
 
 </head>
 <body>
+    //colar o carrinho flutuante que está no arquivo interface_carrinho.md
 
     <nav style="background: var(--dark); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" class="logo">A'Veloz <span>IND Têxtil</span></a>
@@ -48,7 +49,25 @@
             </div>
         </div>
     </div>
-
+            <!-- Carrinho Flutuante -->
+        <div id="carrinho-flutuante" class="carrinho-container">
+            <div class="carrinho-header" onclick="toggleExibirCarrinho()">
+                <div class="carrinho-info">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="carrinho-count">0</span> estampas selecionadas
+                </div>
+                <i class="fas fa-chevron-up" id="carrinho-icon"></i>
+            </div>
+            <div class="carrinho-body" id="carrinho-lista">
+                <!-- Itens serão inseridos aqui pelo JS -->
+                <p class="carrinho-vazio">Nenhuma estampa selecionada.</p>
+            </div>
+            <div class="carrinho-footer">
+                <button class="btn-enviar-whats" onclick="enviarPedidoWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido para WhatsApp
+                </button>
+            </div>
+        </div>
     <footer class="footer">
         <a href="index.html" class="footer-logo">A'VELOZ <span>TÊXTIL</span></a>
         <p>Santa Cruz do Capibaribe - PE</p>
@@ -58,6 +77,8 @@
         </div>
     </footer>
 
+
+    <script src="js/carrinho.js"></script>
     <script src="js/catalogo.js"></script>
 </body>
 </html>

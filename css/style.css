@@ -404,3 +404,130 @@ body {
     .search-wrap { width: 100%; text-align: center; }
     .search-wrap .search-bar { display: inline-block; }
 }
+/* Estilos do Carrinho Flutuante */
+.carrinho-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.carrinho-header {
+    background: #000;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.carrinho-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+#carrinho-count {
+    background: var(--primary);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.carrinho-body {
+    max-height: 0;
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+    background: #f9f9f9;
+}
+
+.carrinho-container.aberto .carrinho-body {
+    max-height: 300px;
+}
+
+.carrinho-container.aberto #carrinho-icon {
+    transform: rotate(180deg);
+}
+
+.carrinho-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrinho-item-info span {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+}
+
+.btn-remover-item {
+    color: #ff4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.carrinho-footer {
+    padding: 15px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.btn-enviar-whats {
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background 0.3s;
+}
+
+.btn-enviar-whats:hover {
+    background: #128C7E;
+}
+
+/* Estilo do botão de selecionar no card */
+.btn-carrinho {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    background: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn-carrinho.no-carrinho {
+    background: #000;
+    color: #fff;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 480px) {
+    .carrinho-container {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+    }
+}
