@@ -24,9 +24,10 @@ body {
 }
 
 /* Navigation */
-nav {
-    padding: 15px 5%;
+.navbar {
+    padding: 15px 15%;
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     align-items: center;
     background: var(--dark);
@@ -47,7 +48,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 50px;
 }
 
 .nav-links a {
@@ -398,4 +399,8 @@ nav {
     .vendedor-card {
         padding: 25px 20px;
     }
+
+    /* Catalogo Digital */
+    .search-wrap { width: 100%; text-align: center; }
+    .search-wrap .search-bar { display: inline-block; }
 }
