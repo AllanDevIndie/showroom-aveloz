@@ -193,7 +193,7 @@ img {
 }
 
 /* Buttons */
-.btn-primary {
+.btn-primary, .hero-btns .btn-outline {
     background: var(--primary);
     color: var(--dark);
     padding: 16px 35px;
@@ -207,9 +207,11 @@ img {
     border: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.hero-btns .btn-outline:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(227, 192, 83, 0.4);
+    box-shadow: 0 0 30px rgba(227, 192, 83, 0.25);
+    filter: brightness(0.95);
 }
 
 .btn-outline {
