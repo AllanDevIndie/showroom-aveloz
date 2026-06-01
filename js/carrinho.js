@@ -6,7 +6,7 @@
 let carrinho = [];
 
 // Função para adicionar/remover do carrinho
-function toggleCarrinho(produtoId, produtoNome) {
+function toggleCarrinho(produtoId, produtoNome, produtoImagem) {
     const index = carrinho.findIndex(item => item.id === produtoId);
     
     if (index > -1) {
@@ -14,7 +14,7 @@ function toggleCarrinho(produtoId, produtoNome) {
         carrinho.splice(index, 1);
     } else {
         // Adiciona se não estiver
-        carrinho.push({ id: produtoId, nome: produtoNome });
+        carrinho.push({ id: produtoId, nome: produtoNome, imagem: produtoImagem || '' });
     }
     
     atualizarInterfaceCarrinho();
@@ -33,15 +33,28 @@ function atualizarInterfaceCarrinho() {
         } else {
             lista.innerHTML = carrinho.map(item => `
                 <div class="carrinho-item">
+                    <div class="carrinho-item-thumb">
+                        <img src="${item.imagem || 'img/logo-aveloz.png'}" alt="${item.nome}">
+                    </div>
                     <div class="carrinho-item-info">
                         <strong>${item.nome}</strong>
                         <span>ID: ${item.id}</span>
                     </div>
-                    <button class="btn-remover-item" onclick="toggleCarrinho('${item.id}', '${item.nome}')">
+                    <button class="btn-remover-item" data-id="${item.id}">
                         <i class="fas fa-trash"></i>
                     </button>
                 </div>
             `).join('');
+
+            lista.querySelectorAll('.btn-remover-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.dataset.id;
+                    const item = carrinho.find(item => item.id === id);
+                    if (item) {
+                        toggleCarrinho(item.id, item.nome);
+                    }
+                });
+            });
         }
     }
     
@@ -59,6 +72,13 @@ function atualizarInterfaceCarrinho() {
             btn.innerHTML = '<i class="fas fa-plus"></i> Selecionar';
         }
     });
+}
+
+function esvaziarCarrinho() {
+    if (carrinho.length === 0) return;
+    carrinho = [];
+    atualizarInterfaceCarrinho();
+    salvarCarrinho();
 }
 
 // Salva o carrinho no localStorage para não perder ao atualizar a página

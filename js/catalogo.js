@@ -105,10 +105,11 @@ function renderizarProdutos(lista) {
         card.className = 'produto-card';
         
         const estaNoCarrinho = typeof carrinho !== 'undefined' && carrinho.some(item => item.id === p.id);
+        const fotoPrincipal = `${IMG_PATH}${p.fotos[0]}`;
 
         card.innerHTML = `
             <div class="img-container">
-                <img src="${IMG_PATH}${p.fotos[0]}" alt="${p.nome}" loading="lazy">
+                <img src="${fotoPrincipal}" alt="${p.nome}" loading="lazy">
             </div>
             <div class="produto-info">
                 <div class="produto-header">
@@ -117,13 +118,20 @@ function renderizarProdutos(lista) {
                 </div>
                 <h3>${p.nome}</h3>
                 <p class="artigos-recomendados"><strong>Artigos:</strong> ${p.artigos}</p>
-                <button class="btn-carrinho ${estaNoCarrinho ? 'no-carrinho' : ''}" 
-                        data-id="${p.id}" 
-                        onclick="toggleCarrinho('${p.id}', '${p.nome}')">
+                <button class="btn-carrinho ${estaNoCarrinho ? 'no-carrinho' : ''}">
                     ${estaNoCarrinho ? '<i class="fas fa-check"></i> Selecionado' : '<i class="fas fa-plus"></i> Selecionar'}
                 </button>
             </div>
         `;
+
+        const btnCarrinho = card.querySelector('.btn-carrinho');
+        if (btnCarrinho) {
+            btnCarrinho.dataset.id = p.id;
+            btnCarrinho.dataset.nome = p.nome;
+            btnCarrinho.dataset.imagem = fotoPrincipal;
+            btnCarrinho.addEventListener('click', () => toggleCarrinho(p.id, p.nome, fotoPrincipal));
+        }
+
         grid.appendChild(card);
     });
 }

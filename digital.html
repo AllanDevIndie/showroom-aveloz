@@ -17,8 +17,6 @@
 
 </head>
 <body>
-    //colar o carrinho flutuante que está no arquivo interface_carrinho.md
-
     <nav style="background: var(--dark); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" class="logo">A'Veloz <span>IND Têxtil</span></a>
         <div class="nav-links">
@@ -63,6 +61,7 @@
                 <p class="carrinho-vazio">Nenhuma estampa selecionada.</p>
             </div>
             <div class="carrinho-footer">
+                <button class="btn-limpar-carrinho" onclick="esvaziarCarrinho()">Esvaziar Carrinho</button>
                 <button class="btn-enviar-whats" onclick="enviarPedidoWhatsApp()">
                     <i class="fab fa-whatsapp"></i> Enviar Pedido para WhatsApp
                 </button>
