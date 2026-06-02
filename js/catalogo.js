@@ -44,7 +44,7 @@ async function carregarDados() {
                     nome: colunas[0],
                     categoria: colunas[1], // Estilo (Floral, Xadrez, etc)
                     artigos: colunas[3], // Usando a coluna de status para Artigos Recomendados
-                    fotos: fotosProcessadas.length > 0 ? fotosProcessadas : ['placeholder.jpg']
+                    fotos: fotosProcessadas.length > 0 ? fotosProcessadas : ['placeholder.webp'] // Imagem padrão se nenhuma foto for fornecida
                 };
             }
             return null;
