@@ -35,5 +35,8 @@ Os dados dos vendedores estão no arquivo `vendedores.html`. Para mudar um núme
 - `vendedores.html`: Hub de atendimento personalizado.
 - `css/style.css`: Estilização global e identidade visual.
 
+## aplicações externas
+https://dash.elfsight.com/apps/instagram-feed
+
 ---
 Desenvolvido com foco em resultados por **DEV ALBK**.
