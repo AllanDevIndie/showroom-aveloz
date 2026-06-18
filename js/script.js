@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
     catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
     inicializarNavegacao();
+    // Exibir todos os artigos por padrão
+    if (document.querySelector('[data-artigo="todos"]')) {
+        mudarArtigo('todos');
+    }
 });
 
 // ============================================================================
@@ -153,20 +157,46 @@ function mudarArtigo(artigo) {
         btn.classList.remove('active');
     });
 
-    // Adicionar classe active ao botão clicado
-    document.querySelector(`[data-artigo="${artigo}"]`).classList.add('active');
+    // Se for 'todos', mostrar todos os artigos
+    if (artigo === 'todos') {
+        const btnTodos = document.querySelector(`[data-artigo="todos"]`);
+        if (btnTodos) btnTodos.classList.add('active');
 
-    // Remover classe active de todos os artigos
+        document.querySelectorAll('.catalogo-artigo').forEach(art => {
+            art.classList.add('active');
+        });
+
+        // Resetar slides de todos os artigos
+        Object.keys(catalogoState.artigos).forEach(a => {
+            catalogoState.currentSlide[a] = 0;
+            irParaSlide(a, 0);
+        });
+
+        const catalogoSection = document.getElementById('catalogo-nativo');
+        if (catalogoSection) {
+            catalogoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        return;
+    }
+
+    // Adicionar classe active ao botão clicado
+    const btn = document.querySelector(`[data-artigo="${artigo}"]`);
+    if (btn) btn.classList.add('active');
+
+    // Remover classe active de todos os artigos e ativar apenas o selecionado
     document.querySelectorAll('.catalogo-artigo').forEach(art => {
         art.classList.remove('active');
     });
 
-    // Adicionar classe active ao artigo selecionado
-    document.querySelector(`[data-artigo="${artigo}"].catalogo-artigo`).classList.add('active');
+    const artigoElem = document.querySelector(`[data-artigo="${artigo}"].catalogo-artigo`);
+    if (artigoElem) artigoElem.classList.add('active');
 
-    // Resetar o slide para o primeiro
-    catalogoState.currentSlide[artigo] = 0;
-    irParaSlide(artigo, 0);
+    // Resetar o slide para o primeiro do artigo selecionado
+    if (catalogoState.artigos[artigo]) {
+        catalogoState.currentSlide[artigo] = 0;
+        irParaSlide(artigo, 0);
+    }
 
     // Scroll suave para o catálogo
     const catalogoSection = document.getElementById('catalogo-nativo');

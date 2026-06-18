@@ -40,7 +40,7 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -50,7 +50,9 @@ img {
     text-decoration: none;
 }
 
-.logo span { color: var(--light); }
+.logo span {
+    color: var(--light);
+}
 
 .nav-links {
     display: flex;
@@ -65,7 +67,9 @@ img {
     transition: var(--transition);
 }
 
-.nav-links a:hover { color: var(--primary); }
+.nav-links a:hover {
+    color: var(--primary);
+}
 
 /* Hero Section */
 .hero {
@@ -79,17 +83,22 @@ img {
     background: #000;
 }
 
-.hero { margin-bottom: 40px; }
+.hero {
+    margin-bottom: 40px;
+}
 
 /* Malha Leila Slider */
 .malha-slider {
     position: relative;
     width: 100%;
     border-radius: 20px;
-    overflow: hidden; /* evita que slides vazem sobre outros blocos */
-    max-height: 460px; /* limita altura para evitar crescimento excessivo */
-    min-height: 360px; /* garante altura do contêiner para não colapsar */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    /* evita que slides vazem sobre outros blocos */
+    max-height: 460px;
+    /* limita altura para evitar crescimento excessivo */
+    min-height: 360px;
+    /* garante altura do contêiner para não colapsar */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     background: #f5f5f5;
 }
 
@@ -101,7 +110,8 @@ img {
     justify-content: center;
     opacity: 0;
     transition: opacity 1.2s ease;
-    padding: 12px; /* garante espaçamento interno sem overflow */
+    padding: 12px;
+    /* garante espaçamento interno sem overflow */
     box-sizing: border-box;
 }
 
@@ -118,7 +128,9 @@ img {
 }
 
 @media (max-width: 768px) {
-    .malha-slider { max-height: 50vh; }
+    .malha-slider {
+        max-height: 50vh;
+    }
 }
 
 .hero-slider {
@@ -193,7 +205,8 @@ img {
 }
 
 /* Buttons */
-.btn-primary, .hero-btns .btn-outline {
+.btn-primary,
+.hero-btns .btn-outline {
     background: var(--primary);
     color: var(--dark);
     padding: 16px 35px;
@@ -269,7 +282,7 @@ img {
     aspect-ratio: 16 / 9;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     background: #000;
 }
 
@@ -287,6 +300,7 @@ img {
     text-align: center;
     padding: 0 10px;
 }
+
 .search-wrap .search-bar {
     display: block;
     width: 100%;
@@ -300,11 +314,13 @@ img {
     font-size: 0.95rem;
     color: var(--dark);
 }
+
 .search-wrap .search-bar:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 4px rgba(227, 192, 83, 0.15);
 }
+
 .filtros {
     display: flex;
     flex-wrap: wrap;
@@ -318,6 +334,7 @@ img {
     margin: 0 auto 30px;
     max-width: 1100px;
 }
+
 .filter-btn {
     cursor: pointer;
     padding: 12px 20px;
@@ -330,17 +347,20 @@ img {
     transition: all 0.25s ease;
     white-space: nowrap;
 }
+
 .filter-btn:hover {
     background: rgba(227, 192, 83, 0.16);
     border-color: rgba(227, 192, 83, 0.35);
     transform: translateY(-1px);
 }
+
 .filter-btn.active {
     background: var(--primary);
     color: var(--dark);
     border-color: var(--primary);
     box-shadow: 0 14px 30px rgba(227, 192, 83, 0.18);
 }
+
 .grid-catalogo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -355,7 +375,7 @@ img {
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
@@ -380,6 +400,78 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ==========================================================================
+   CATÁLOGO NÁTIVO - NAVEGAÇÃO DE ARTIGOS (Filtro)
+   ========================================================================== */
+.catalogo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 5%;
+}
+
+.catalogo-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    overflow-x: auto;
+    padding: 12px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.catalogo-nav::-webkit-scrollbar {
+    height: 8px;
+}
+
+.catalogo-nav::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.12);
+    border-radius: 999px;
+}
+
+.catalogo-nav-btn {
+    flex: 0 0 auto;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+    font-weight: 700;
+    color: var(--dark);
+    transition: var(--transition);
+    white-space: nowrap;
+    cursor: pointer;
+    scroll-snap-align: center;
+}
+
+.catalogo-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.catalogo-nav-btn.active {
+    background: var(--primary);
+    color: #000 !important;
+    border-color: var(--primary);
+    box-shadow: 0 16px 36px rgba(227,192,83,0.16);
+    transform: translateY(-4px);
+}
+
+@media (min-width: 1100px) {
+    .catalogo-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .catalogo-nav-btn {
+        min-width: 160px;
+        text-align: center;
+    }
 }
 
 .produto-info {
@@ -455,7 +547,7 @@ img {
     align-items: center;
     color: #999;
     border: 1px solid #ddd;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Features */
@@ -501,7 +593,8 @@ img {
     transition: var(--transition);
     text-align: left;
 }
-.btn-whatsapp{
+
+.btn-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -513,11 +606,13 @@ img {
     font-weight: 500;
     margin-top: 20px;
 }
+
 .vendedor-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-color: var(--primary);
 }
+
 .avatar {
     width: 80px;
     height: 80px;
@@ -533,63 +628,74 @@ img {
     padding: 20px 5%;
     margin-top: 60px;
 }
+
 .footer-logo {
     font-size: 0.8 rem;
     font-weight: 700;
     color: var(--primary);
     text-decoration: none;
 }
-.footer-logo span { color: var(--light); }
+
+.footer-logo span {
+    color: var(--light);
+}
 
 /* ==========================================================================
    AJUSTES DE RESPONSIVIDADE (MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* 1. Menu de Navegação */
     nav {
-        flex-direction: column; /* Coloca o logo em cima e links embaixo */
+        flex-direction: column;
+        /* Coloca o logo em cima e links embaixo */
         gap: 15px;
         padding: 15px 2%;
     }
-    
+
     .nav-links {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .nav-links a {
         font-size: 0.8rem;
     }
 
     /* 2. Hero Section */
     .hero {
-        height: 100vh; /* Ocupa a tela toda no celular */
+        height: 100vh;
+        /* Ocupa a tela toda no celular */
     }
-    
+
     .hero-content {
         padding: 15px;
         width: 95%;
     }
-    
+
     .hero-title {
-        font-size: 2.2rem; /* Diminui o título para não quebrar feio */
+        font-size: 2.2rem;
+        /* Diminui o título para não quebrar feio */
         line-height: 1.2;
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 25px;
     }
-    
+
     .hero-btns {
-        flex-direction: column; /* Botões um em cima do outro */
+        flex-direction: column;
+        /* Botões um em cima do outro */
         width: 100%;
         gap: 10px;
     }
-    
-    .btn-primary, .btn-outline {
-        width: 100%; /* Botões ocupam a largura toda */
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        /* Botões ocupam a largura toda */
         text-align: center;
         padding: 14px;
     }
@@ -599,19 +705,20 @@ img {
         font-size: 1.8rem;
     }
 
-    
+
     /* Ajuste da seção Malha Leila para empilhar no celular */
-    #malha-leila > div {
+    #malha-leila>div {
         flex-direction: column !important;
         gap: 30px !important;
         text-align: center;
     }
-    
+
     #malha-leila ul {
         text-align: left;
         display: inline-block;
     }
-        .vendedores-grid {
+
+    .vendedores-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -621,9 +728,15 @@ img {
     }
 
     /* Catalogo Digital */
-    .grid-catalogo { grid-template-columns: 1fr; }
-    .img-container { max-height: none; }
+    .grid-catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .img-container {
+        max-height: none;
+    }
 }
+
 /* Estilos do Carrinho Flutuante */
 .carrinho-container {
     position: fixed;
@@ -632,7 +745,7 @@ img {
     width: 320px;
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -885,6 +998,7 @@ img {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
