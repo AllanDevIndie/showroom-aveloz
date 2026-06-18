@@ -397,3 +397,273 @@ window.LP = {
     ehTablet,
     verificarSuporteWebP
 };
+/* ============================================================================
+   JAVASCRIPT PARA SLIDERS DE PRODUTOS
+   Desenvolvido por DEV ALBK
+   ============================================================================ */
+
+// ============================================================================
+// CONFIGURAÇÃO DOS SLIDERS
+// ============================================================================
+
+const slidersConfig = {
+    'malha-leila': {
+        totalSlides: 5,
+        visibleSlides: 3,
+        autoPlayInterval: 3000, // 3 segundos
+        currentSlide: 0,
+        autoPlayTimer: null
+    },
+    'nossos-tecidos': {
+        totalSlides: 8,
+        visibleSlides: 3,
+        autoPlayInterval: 3000, // 3 segundos
+        currentSlide: 0,
+        autoPlayTimer: null
+    }
+};
+
+// ============================================================================
+// INICIALIZAÇÃO
+// ============================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarSliders();
+});
+
+function inicializarSliders() {
+    Object.keys(slidersConfig).forEach(sliderId => {
+        criarDots(sliderId);
+        iniciarAutoPlay(sliderId);
+        
+        // Pausar autoplay ao passar o mouse
+        const slider = document.getElementById(`slider-${sliderId}`);
+        if (slider) {
+            slider.addEventListener('mouseenter', () => pausarAutoPlay(sliderId));
+            slider.addEventListener('mouseleave', () => iniciarAutoPlay(sliderId));
+        }
+    });
+}
+
+// ============================================================================
+// CRIAR INDICADORES (DOTS)
+// ============================================================================
+
+function criarDots(sliderId) {
+    const config = slidersConfig[sliderId];
+    const dotsContainer = document.getElementById(`dots-${sliderId}`);
+    
+    if (!dotsContainer) return;
+    
+    dotsContainer.innerHTML = '';
+    
+    // Calcular quantos dots precisamos (baseado em quantas posições o slider pode ter)
+    const totalDots = Math.ceil(config.totalSlides - config.visibleSlides + 1);
+    
+    for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => irParaSlide(sliderId, i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+// ============================================================================
+// ATUALIZAR INDICADORES
+// ============================================================================
+
+function atualizarDots(sliderId) {
+    const dotsContainer = document.getElementById(`dots-${sliderId}`);
+    if (!dotsContainer) return;
+    
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === slidersConfig[sliderId].currentSlide) {
+            dot.classList.add('active');
+        }
+    });
+}
+
+// ============================================================================
+// MUDAR SLIDE (NAVEGAÇÃO MANUAL)
+// ============================================================================
+
+function mudarSlideManual(sliderId, direcao) {
+    const config = slidersConfig[sliderId];
+    const maxSlide = Math.ceil(config.totalSlides - config.visibleSlides);
+    
+    let novoSlide = config.currentSlide + direcao;
+    
+    // Loop - voltar ao início quando chegar ao final
+    if (novoSlide > maxSlide) {
+        novoSlide = 0;
+    } else if (novoSlide < 0) {
+        novoSlide = maxSlide;
+    }
+    
+    irParaSlide(sliderId, novoSlide);
+    
+    // Reiniciar autoplay
+    pausarAutoPlay(sliderId);
+    iniciarAutoPlay(sliderId);
+}
+
+// ============================================================================
+// IR PARA SLIDE ESPECÍFICO
+// ============================================================================
+
+function irParaSlide(sliderId, indice) {
+    const config = slidersConfig[sliderId];
+    const slider = document.getElementById(`slider-${sliderId}`);
+    
+    if (!slider) return;
+    
+    config.currentSlide = indice;
+    
+    // Calcular a posição do slider
+    const slideWidth = 100 / config.visibleSlides; // Largura de cada slide em %
+    const offset = -indice * slideWidth;
+    
+    slider.style.transform = `translateX(${offset}%)`;
+    
+    // Atualizar dots
+    atualizarDots(sliderId);
+}
+
+// ============================================================================
+// AUTO PLAY
+// ============================================================================
+
+function iniciarAutoPlay(sliderId) {
+    const config = slidersConfig[sliderId];
+    
+    // Limpar timer anterior se existir
+    if (config.autoPlayTimer) {
+        clearInterval(config.autoPlayTimer);
+    }
+    
+    config.autoPlayTimer = setInterval(() => {
+        const maxSlide = Math.ceil(config.totalSlides - config.visibleSlides);
+        let proximoSlide = config.currentSlide + 1;
+        
+        // Loop automático
+        if (proximoSlide > maxSlide) {
+            proximoSlide = 0;
+        }
+        
+        irParaSlide(sliderId, proximoSlide);
+    }, config.autoPlayInterval);
+}
+
+function pausarAutoPlay(sliderId) {
+    const config = slidersConfig[sliderId];
+    if (config.autoPlayTimer) {
+        clearInterval(config.autoPlayTimer);
+        config.autoPlayTimer = null;
+    }
+}
+
+// ============================================================================
+// SUPORTE A TECLADO
+// ============================================================================
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        // Encontrar qual slider tem foco
+        const slider = document.querySelector('.slider:focus-within');
+        if (slider) {
+            const sliderId = slider.id.replace('slider-', '');
+            mudarSlideManual(sliderId, -1);
+        }
+    } else if (event.key === 'ArrowRight') {
+        const slider = document.querySelector('.slider:focus-within');
+        if (slider) {
+            const sliderId = slider.id.replace('slider-', '');
+            mudarSlideManual(sliderId, 1);
+        }
+    }
+});
+
+// ============================================================================
+// RESPONSIVIDADE - AJUSTAR SLIDES VISÍVEIS EM MOBILE
+// ============================================================================
+
+function ajustarSlidesResponsivos() {
+    const width = window.innerWidth;
+    
+    Object.keys(slidersConfig).forEach(sliderId => {
+        const config = slidersConfig[sliderId];
+        let novoVisibleSlides = 3; // Desktop
+        
+        if (width <= 768) {
+            novoVisibleSlides = 2; // Tablet
+        }
+        if (width <= 480) {
+            novoVisibleSlides = 1; // Mobile
+        }
+        
+        // Se mudou o número de slides visíveis, recalcular
+        if (config.visibleSlides !== novoVisibleSlides) {
+            config.visibleSlides = novoVisibleSlides;
+            config.currentSlide = 0;
+            criarDots(sliderId);
+            irParaSlide(sliderId, 0);
+        }
+    });
+}
+
+// Chamar ao redimensionar a janela
+window.addEventListener('resize', ajustarSlidesResponsivos);
+
+// Chamar ao carregar a página
+ajustarSlidesResponsivos();
+
+// ============================================================================
+// SUPORTE A TOQUE (SWIPE) - MOBILE
+// ============================================================================
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}, false);
+
+document.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+}, false);
+
+function handleSwipe() {
+    const swipeThreshold = 50; // Mínimo de pixels para considerar um swipe
+    const diff = touchStartX - touchEndX;
+    
+    // Verificar se o toque foi em um slider
+    const slider = document.querySelector('.slider');
+    if (!slider) return;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        const sliderId = slider.id.replace('slider-', '');
+        
+        if (diff > 0) {
+            // Swipe para esquerda = próximo slide
+            mudarSlideManual(sliderId, 1);
+        } else {
+            // Swipe para direita = slide anterior
+            mudarSlideManual(sliderId, -1);
+        }
+    }
+}
+
+// ============================================================================
+// EXPORTAR FUNÇÕES
+// ============================================================================
+
+window.SlidersLP = {
+    mudarSlideManual,
+    irParaSlide,
+    iniciarAutoPlay,
+    pausarAutoPlay
+};

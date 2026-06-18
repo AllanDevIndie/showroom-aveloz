@@ -39,52 +39,204 @@
             </div>
         </div>
     </section>
+<!-- ============================================================================
+     SEÇÃO DE VÍDEO - INSIRA LOGO APÓS O HERO E ANTES DOS PRODUTOS
+     ============================================================================ -->
 
-    <!-- ============================================================================
-         PRODUTOS EM DESTAQUE
-         ============================================================================ -->
-    <section class="produtos" id="produtos">
-        <div class="container">
-            <h2>Nossos Produtos</h2>
-            <p class="section-subtitle">Conheça nossa linha completa de malhas e tecidos</p>
-            
-            <div class="produtos-grid">
-                <div class="produto-card">
-                    <img src="img/produtos/produto-1.png" alt="Produto 1" loading="lazy">
+<section class="video-section" id="video">
+    <div class="container">
+        <div class="video-wrapper">
+            <!-- Iframe do YouTube com lazy loading -->
+            <iframe 
+                class="video-iframe"
+                src="https://www.youtube.com/embed/hWIjArEnq-k?start=1&rel=0&modestbranding=1&controls=1"
+                title="A'Veloz Têxtil - Conheça nossos produtos"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="video-content">
+            <p class="video-cta-text">
+                Escolha a A'Veloz Têxtil para uma experiência de compra de tecidos excepcional!
+            </p>
+            <a href="https://wa.me/+5581999766110?text=Olá,%20vim%20do%20Google!" target="_blank" class="cta-button">
+                <i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp agora!
+            </a>
+        </div>
+    </div>
+</section>
+<!-- ============================================================================
+     SEÇÃO DE 4 PONTOS - INSIRA LOGO APÓS O VÍDEO E ANTES DOS PRODUTOS
+     ============================================================================ -->
+
+<section class="pontos-section" id="diferenciais">
+    <div class="container">
+        <h2>Por que escolher A'Veloz Têxtil?</h2>
+        <p class="section-subtitle">Qualidade, variedade e exclusividade em cada produto</p>
+
+        <div class="pontos-grid">
+            <!-- Ponto 1: Fábrica -->
+            <div class="ponto-card">
+                <div class="ponto-icon">
+                    <i class="fas fa-industry"></i>
                 </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-2.png" alt="Produto 2" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-3.png" alt="Produto 3" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-4.png" alt="Produto 4" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-5.png" alt="Produto 5" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-6.png" alt="Produto 6" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-7.png" alt="Produto 7" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-8.png" alt="Produto 8" loading="lazy">
-                </div>
-                <div class="produto-card">
-                    <img src="img/produtos/produto-9.png" alt="Produto 9" loading="lazy">
-                </div>
+                <h3>A'Veloz é Fábrica</h3>
+                <p>Temos os melhores preços por sermos fabricantes dos nossos próprios tecidos.</p>
             </div>
 
-            <div class="cta-center">
-                <a href="https://wa.me/+5581999766110?text=Olá,%20vim%20do%20Google!" target="_blank" class="cta-button">
-                    Solicite um orçamento
-                </a>
+            <!-- Ponto 2: Atacado e Varejo -->
+            <div class="ponto-card">
+                <div class="ponto-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Atacado e Varejo</h3>
+                <p>Oferecemos ao atacado e varejo uma vasta variedade de produtos de alta qualidade.</p>
+            </div>
+
+            <!-- Ponto 3: Variedade de Estampas -->
+            <div class="ponto-card">
+                <div class="ponto-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Variedade de Estampas</h3>
+                <p>Escolha entre mais de 100 opções de estilos, cores e texturas de nossas coleções atuais.</p>
+            </div>
+
+            <!-- Ponto 4: Estampas Exclusivas -->
+            <div class="ponto-card">
+                <div class="ponto-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Estampas Exclusivas</h3>
+                <p>Esteja a frente com estampas exclusivas e personalizadas em vários artigos.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+ <!-- ============================================================================
+     SEÇÃO 1: MALHA LEILA - SLIDER AUTOMÁTICO
+     INSIRA NO LUGAR DA SEÇÃO DE PRODUTOS ATUAL
+     ============================================================================ -->
+
+<section class="produtos-slider-section" id="malha-leila-slider">
+    <div class="container">
+        <h2>Malha Leila a Legítima você só encontra na A'Veloz Têxtil</h2>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider" id="slider-malha-leila">
+                    <!-- Imagem 1 -->
+                    <div class="slide-item">
+                        <img src="img/malha-leila/foto-1.jpg" alt="Malha Leila - Foto 1" loading="lazy">
+                    </div>
+                    <!-- Imagem 2 -->
+                    <div class="slide-item">
+                        <img src="img/malha-leila/foto-2.jpg" alt="Malha Leila - Foto 2" loading="lazy">
+                    </div>
+                    <!-- Imagem 3 -->
+                    <div class="slide-item">
+                        <img src="img/malha-leila/foto-3.jpg" alt="Malha Leila - Foto 3" loading="lazy">
+                    </div>
+                    <!-- Imagem 4 -->
+                    <div class="slide-item">
+                        <img src="img/malha-leila/foto-4.jpg" alt="Malha Leila - Foto 4" loading="lazy">
+                    </div>
+                    <!-- Imagem 5 -->
+                    <div class="slide-item">
+                        <img src="img/malha-leila/foto-5.jpg" alt="Malha Leila - Foto 5" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de Navegação -->
+            <button class="slider-btn slider-prev" onclick="mudarSlideManual('malha-leila', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn slider-next" onclick="mudarSlideManual('malha-leila', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicadores (Dots) -->
+            <div class="slider-dots" id="dots-malha-leila"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     SEÇÃO 2: NOSSOS TECIDOS - SLIDER AUTOMÁTICO
+     ============================================================================ -->
+
+<section class="produtos-slider-section" id="nossos-tecidos-slider">
+    <div class="container">
+        <h2>Crie Tendências Explorando a Diversidade dos Nossos Tecidos</h2>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider" id="slider-nossos-tecidos">
+                    <!-- Imagem 1 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-1.jpg" alt="Nossos Tecidos - Foto 1" loading="lazy">
+                    </div>
+                    <!-- Imagem 2 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-2.jpg" alt="Nossos Tecidos - Foto 2" loading="lazy">
+                    </div>
+                    <!-- Imagem 3 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-3.jpg" alt="Nossos Tecidos - Foto 3" loading="lazy">
+                    </div>
+                    <!-- Imagem 4 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-4.jpg" alt="Nossos Tecidos - Foto 4" loading="lazy">
+                    </div>
+                    <!-- Imagem 5 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-5.jpg" alt="Nossos Tecidos - Foto 5" loading="lazy">
+                    </div>
+                    <!-- Imagem 6 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-6.jpg" alt="Nossos Tecidos - Foto 6" loading="lazy">
+                    </div>
+                    <!-- Imagem 7 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-7.jpg" alt="Nossos Tecidos - Foto 7" loading="lazy">
+                    </div>
+                    <!-- Imagem 8 -->
+                    <div class="slide-item">
+                        <img src="img/nossos-tecidos/foto-8.jpg" alt="Nossos Tecidos - Foto 8" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botões de Navegação -->
+            <button class="slider-btn slider-prev" onclick="mudarSlideManual('nossos-tecidos', -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-btn slider-next" onclick="mudarSlideManual('nossos-tecidos', 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicadores (Dots) -->
+            <div class="slider-dots" id="dots-nossos-tecidos"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================================
+     BOTÃO EXPLORE CATÁLOGO
+     ============================================================================ -->
+
+<section class="explore-catalogo-section">
+    <div class="container">
+        <a href="index.html#catalogo-nativo" class="cta-button cta-button-large">
+            Explore nosso catálogo
+        </a>
+    </div>
+</section>
+
 
     <!-- ============================================================================
          DEPOIMENTOS
@@ -302,7 +454,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2023-2026 A'Veloz Têxtil - CNPJ: 07.573.578/0001-86</p>
+                <p>&copy; 2026 A'Veloz Têxtil - CNPJ: 07.573.578/0001-86</p>
                 <p>Desenvolvido por <strong><a href="https://devalbk.com.br" target="_blank">DEV ALBK</a></strong></p>
             </div>
         </div>

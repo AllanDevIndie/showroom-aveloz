@@ -4,6 +4,7 @@ Este é um projeto de Showroom Digital desenvolvido para a **Aveloz Têxtil**, f
 
 ## 🚀 Live Demo
 [Acesse o projeto aqui](https://allandevindie.github.io/showroom-aveloz/)
+[Landing page do projeto](https://allandevindie.github.io/showroom-aveloz/lp.html)
 ## 🚀 Tecnologias Utilizadas
 - HTML5 / CSS3 (Design Premium & Responsivo)
 - Google Fonts (Inter)
