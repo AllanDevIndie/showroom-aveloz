@@ -1,21 +1,27 @@
-// ============================================================================
-// CATÁLOGO NATIVO - A'VELOZ TÊXTIL
-// Desenvolvido por DEV ALBK
-// ============================================================================
-
 // Estado do catálogo
 let catalogoState = {
-    artigos: {
-        'malha-leila-estampada': { slides: 3 },
-        'malha-leila-moda-praia': { slides: 6 },
-        'malha-leila-camisaria': { slides: 4 },
-        'malha-leila-kids': { slides: 2 }
-    },
+    artigos: {},
     currentSlide: {}
 };
 
+// Contar slides automaticamente
+function contarSlidesAutomaticamente() {
+    const artigos = {};
+    
+    // Procurar por todos os sliders
+    document.querySelectorAll('[id^="slider-"]').forEach(slider => {
+        const artigoId = slider.id.replace('slider-', '');
+        // Contar quantas imagens/divs tem dentro do slider
+        const numSlides = slider.children.length;
+        artigos[artigoId] = { slides: numSlides };
+    });
+    
+    return artigos;
+}
+
 // Inicializar o catálogo
 document.addEventListener('DOMContentLoaded', function() {
+    catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
     inicializarNavegacao();
 });
