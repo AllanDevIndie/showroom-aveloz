@@ -799,3 +799,358 @@ img {
         left: 5%;
     }
 }
+
+/* Catalogo */
+
+/* ============================================================================
+   CATÁLOGO NATIVO - A'VELOZ TÊXTIL
+   ============================================================================ */
+
+.catalogo-nativo {
+    width: 100%;
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.catalogo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ============================================================================
+   NAVEGAÇÃO DE ARTIGOS
+   ============================================================================ */
+
+.catalogo-nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.catalogo-nav-btn {
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: #666;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.catalogo-nav-btn:hover {
+    color: var(--primary, #1e88e5);
+}
+
+.catalogo-nav-btn.active {
+    color: var(--primary, #1e88e5);
+}
+
+.catalogo-nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary, #1e88e5);
+}
+
+/* ============================================================================
+   CONTEÚDO DO ARTIGO
+   ============================================================================ */
+
+.catalogo-content {
+    position: relative;
+}
+
+.catalogo-artigo {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.catalogo-artigo.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================================
+   CABEÇALHO DO ARTIGO
+   ============================================================================ */
+
+.artigo-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.artigo-titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+}
+
+.artigo-codigo {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ============================================================================
+   DESCRIÇÃO DO ARTIGO
+   ============================================================================ */
+
+.artigo-descricao {
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artigo-descricao p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* ============================================================================
+   SLIDER DE IMAGENS
+   ============================================================================ */
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* ============================================================================
+   BOTÕES DE NAVEGAÇÃO DO SLIDER
+   ============================================================================ */
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--primary, #1e88e5);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background: var(--primary, #1e88e5);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-prev {
+    left: -60px;
+}
+
+.slider-next {
+    right: -60px;
+}
+
+/* ============================================================================
+   INDICADORES (DOTS)
+   ============================================================================ */
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--primary, #1e88e5);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: var(--primary, #1e88e5);
+}
+
+/* ============================================================================
+   RESPONSIVIDADE - TABLET
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .catalogo-nativo {
+        padding: 40px 15px;
+    }
+
+    .catalogo-nav {
+        gap: 10px;
+        margin-bottom: 35px;
+    }
+
+    .catalogo-nav-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .artigo-titulo {
+        font-size: 2rem;
+    }
+
+    .artigo-descricao p {
+        font-size: 15px;
+    }
+
+    .slider-prev,
+    .slider-next {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        left: 10px;
+        right: auto;
+    }
+
+    .slider-next {
+        left: auto;
+        right: 10px;
+    }
+
+    .slider-btn {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    .slider-btn:hover {
+        background: var(--primary, #1e88e5);
+    }
+}
+
+/* ============================================================================
+   RESPONSIVIDADE - MOBILE
+   ============================================================================ */
+
+@media (max-width: 480px) {
+    .catalogo-nativo {
+        padding: 30px 10px;
+    }
+
+    .catalogo-nav {
+        gap: 8px;
+        margin-bottom: 30px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .catalogo-nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .artigo-header {
+        margin-bottom: 20px;
+    }
+
+    .artigo-titulo {
+        font-size: 1.5rem;
+    }
+
+    .artigo-codigo {
+        font-size: 12px;
+    }
+
+    .artigo-descricao {
+        margin-bottom: 25px;
+    }
+
+    .artigo-descricao p {
+        font-size: 14px;
+    }
+
+    .slider-container {
+        max-width: 100%;
+    }
+
+    .slider-prev,
+    .slider-next {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        left: 5px;
+    }
+
+    .slider-next {
+        left: auto;
+        right: 5px;
+    }
+
+    .slider-dots {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}

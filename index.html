@@ -86,29 +86,160 @@
     </section>
 
     <!-- Showroom Section (Vídeos) -->
-    <section class="section" id="showroom">
-        <h2 class="section-title">Nossas Coleções em Vídeo</h2>
-        <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/videoseries?list=PLiXtcNZ1jC69z5kQkK9BK-v-yqbcELC0P" 
-            title="Aveloz Showroom" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-            </iframe>
-        </div>
-        <p style="text-align: center; margin-top: 25px; color: var(--text-muted);">Assista às nossas últimas novidades direto da fábrica.</p>
-    </section>
+<!-- SEÇÃO DE CATÁLOGO NATIVO - A'VELOZ TÊXTIL -->
+<section class="catalogo-nativo" id="catalogo-nativo">
+    <div class="catalogo-container">
+        <!-- Navegação de Artigos -->
+        <nav class="catalogo-nav">
+            <button class="catalogo-nav-btn active" data-artigo="malha-leila-estampada">
+                Malha Leila Estampada
+            </button>
+            <button class="catalogo-nav-btn" data-artigo="malha-leila-moda-praia">
+                Malha Leila Moda Praia
+            </button>
+            <button class="catalogo-nav-btn" data-artigo="malha-leila-camisaria">
+                Malha Leila Camisaria
+            </button>
+            <button class="catalogo-nav-btn" data-artigo="malha-leila-kids">
+                Malha Leila Kids
+            </button>
+        </nav>
 
-    <!-- Novidades Section (Instagram) -->
-    <section class="section" id="novidades" style="background: var(--gray);">
-        <h2 class="section-title">Novidades no Instagram</h2>
-        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Siga nosso perfil e acompanhe os lançamentos diários.</p>
-        
-        <div class="insta-placeholder">
-            <i class="fa-brands fa-instagram" style="font-size: 4rem; margin-bottom: 20px; color: var(--primary);"></i>
-            <p style="font-weight: 600;">Aqui aparecerá o seu Feed do Instagram automaticamente.</p>
-            <small>Dica: Use o behold.so ou elfsight.com para gerar o widget gratuito.</small>
+        <!-- Conteúdo do Artigo -->
+        <div class="catalogo-content">
+            <!-- Artigo 1: Malha Leila Estampada -->
+            <div class="catalogo-artigo active" data-artigo="malha-leila-estampada">
+                <div class="artigo-header">
+                    <h2 class="artigo-titulo">Malha Leila Estampada</h2>
+                    <p class="artigo-codigo">Cód. 90151</p>
+                </div>
+
+                <div class="artigo-descricao">
+                    <p>Malha Leila com estampas exclusivas e modernas. Perfeita para peças do dia a dia com estilo e conforto. Disponível em diversas cores e padrões.</p>
+                </div>
+
+                <!-- Slider de Imagens -->
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider" id="slider-malha-leila-estampada">
+                            <img src="img/catalogo/malha-leila-estampada/foto-1.jpg" alt="Malha Leila Estampada - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-leila-estampada/foto-2.jpg" alt="Malha Leila Estampada - Foto 2" class="slide-img">
+                            <img src="img/catalogo/malha-leila-estampada/foto-3.jpg" alt="Malha Leila Estampada - Foto 3" class="slide-img">
+                        </div>
+                    </div>
+
+                    <!-- Controles do Slider -->
+                    <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn slider-next" onclick="mudarSlide(this, 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Indicadores (Dots) -->
+                    <div class="slider-dots" id="dots-malha-leila-estampada"></div>
+                </div>
+            </div>
+
+            <!-- Artigo 2: Malha Leila Moda Praia -->
+            <div class="catalogo-artigo" data-artigo="malha-leila-moda-praia">
+                <div class="artigo-header">
+                    <h2 class="artigo-titulo">Malha Leila Moda Praia</h2>
+                    <p class="artigo-codigo">Cód. 90151</p>
+                </div>
+
+                <div class="artigo-descricao">
+                    <p>Coleção especial para moda praia com estampas tropicais vibrantes. Ideal para biquínis, maiôs e saídas de praia. Conforto e estilo garantidos.</p>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider" id="slider-malha-leila-moda-praia">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-1.jpg" alt="Malha Leila Moda Praia - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-2.jpg" alt="Malha Leila Moda Praia - Foto 2" class="slide-img">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-3.jpg" alt="Malha Leila Moda Praia - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-4.jpg" alt="Malha Leila Moda Praia - Foto 4" class="slide-img">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-5.jpg" alt="Malha Leila Moda Praia - Foto 5" class="slide-img">
+                            <img src="img/catalogo/malha-leila-moda-praia/foto-6.jpg" alt="Malha Leila Moda Praia - Foto 6" class="slide-img">
+                        </div>
+                    </div>
+
+                    <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn slider-next" onclick="mudarSlide(this, 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="slider-dots" id="dots-malha-leila-moda-praia"></div>
+                </div>
+            </div>
+
+            <!-- Artigo 3: Malha Leila Camisaria -->
+            <div class="catalogo-artigo" data-artigo="malha-leila-camisaria">
+                <div class="artigo-header">
+                    <h2 class="artigo-titulo">Malha Leila Camisaria</h2>
+                    <p class="artigo-codigo">Cód. 90151</p>
+                </div>
+
+                <div class="artigo-descricao">
+                    <p>Linha camisaria com estampas geométricas e padrões sofisticados. Perfeita para camisetas e camisas masculinas e femininas de alta qualidade.</p>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider" id="slider-malha-leila-camisaria">
+                            <img src="img/catalogo/malha-leila-camisaria/foto-1.jpg" alt="Malha Leila Camisaria - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-leila-camisaria/foto-2.jpg" alt="Malha Leila Camisaria - Foto 2" class="slide-img">
+                            <img src="img/catalogo/malha-leila-camisaria/foto-3.jpg" alt="Malha Leila Camisaria - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-leila-camisaria/foto-4.jpg" alt="Malha Leila Camisaria - Foto 4" class="slide-img">
+                        </div>
+                    </div>
+
+                    <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn slider-next" onclick="mudarSlide(this, 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="slider-dots" id="dots-malha-leila-camisaria"></div>
+                </div>
+            </div>
+
+            <!-- Artigo 4: Malha Leila Kids -->
+            <div class="catalogo-artigo" data-artigo="malha-leila-kids">
+                <div class="artigo-header">
+                    <h2 class="artigo-titulo">Malha Leila Kids</h2>
+                    <p class="artigo-codigo">Cód. 90151</p>
+                </div>
+
+                <div class="artigo-descricao">
+                    <p>Coleção infantil com estampas coloridas e lúdicas. Conforto e segurança para as crianças, com designs alegres e modernos.</p>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider" id="slider-malha-leila-kids">
+                            <img src="img/catalogo/malha-leila-kids/foto-1.jpg" alt="Malha Leila Kids - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-leila-kids/foto-2.jpg" alt="Malha Leila Kids - Foto 2" class="slide-img">
+                        </div>
+                    </div>
+
+                    <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn slider-next" onclick="mudarSlide(this, 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="slider-dots" id="dots-malha-leila-kids"></div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Diferenciais -->
     <section class="section">
@@ -216,6 +347,9 @@
             setInterval(nextMalhaSlide, 5000);
         }
     </script>
+
+    <!-- Catálogo Script -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
