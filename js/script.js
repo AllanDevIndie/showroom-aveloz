@@ -11,7 +11,7 @@ let filtroState = {
     todosOsArtigos: [
         'todos', 'barbie', 'cotton-listrado', 'crepe-liverpool', 'dry-fit-colmeia',
         'dry-grao-de-arroz', 'duna', 'fio-torcido-listrado', 'liganete', 'london',
-        'malha-algodao', 'malha-bale', 'malha-bally', 'malha-canelada',
+        'malha-algodao', 'malha-bally', 'malha-canelada',
         'malha-canelada-de-suede', 'malha-crepe', 'malha-fio-torcido', 'malha-helanca',
         'malha-laisy', 'malha-leila-kids', 'malha-leila-sublimacao', 'malha-montaria',
         'malha-pp', 'malha-pv', 'malha-suede', 'microfibra', 'moletom',
@@ -22,7 +22,7 @@ let filtroState = {
 // Contar slides automaticamente
 function contarSlidesAutomaticamente() {
     const artigos = {};
-    
+
     // Procurar por todos os sliders
     document.querySelectorAll('[id^="slider-"]').forEach(slider => {
         const artigoId = slider.id.replace('slider-', '');
@@ -30,12 +30,12 @@ function contarSlidesAutomaticamente() {
         const numSlides = slider.children.length;
         artigos[artigoId] = { slides: numSlides };
     });
-    
+
     return artigos;
 }
 
 // Inicializar o catálogo
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
     // Inicializar filtro e busca no catálogo quando disponível
@@ -172,7 +172,7 @@ function renderizarProdutos() {
             const nomeNormalizado = normalizarTexto(nomeProduto);
             const descricaoNormalizada = normalizarTexto(descricaoProduto);
             const artigoNormalizado = normalizarTexto(artigoDoProduto || '');
-            
+
             mostrar = nomeNormalizado.includes(filtroState.termoBusca) ||
                 descricaoNormalizada.includes(filtroState.termoBusca) ||
                 artigoNormalizado.includes(filtroState.termoBusca);
@@ -232,13 +232,13 @@ function buscarArtigo(termo) {
 function inicializarFiltro() {
     const searchInput = document.getElementById('catalogo-search');
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', function (e) {
             buscarArtigo(e.target.value);
         });
     }
 
     document.querySelectorAll('.catalogo-filtro-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
+        btn.addEventListener('click', function () {
             const artigo = this.getAttribute('data-artigo');
             mudarArtigo(artigo);
         });
@@ -284,7 +284,7 @@ window.obterArtigosFiltrados = obterArtigosFiltrados;
 // SUPORTE A TECLADO
 // ============================================================================
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     // Encontrar o artigo ativo
     const artigoAtivo = document.querySelector('.catalogo-artigo.active');
     if (!artigoAtivo) return;

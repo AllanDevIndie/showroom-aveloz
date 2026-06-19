@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A'Veloz Ind Têxtil - Showroom Digital</title>
     <link rel="icon" type="image/png" href="img/logo-aveloz.png">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -39,10 +40,11 @@
             <div class="slide" style="background-image: url('img/estampa4.jpg')"></div>
             <div class="slide" style="background-image: url('img/estampa5.jpg')"></div>
         </div>
-        
+
         <div class="hero-content">
             <h1 class="hero-title">Qualidade que se sente no toque.</h1>
-            <p class="hero-subtitle">Fabricante líder em Santa Cruz do Capibaribe. Malhas exclusivas, estampas modernas e o melhor preço do mercado têxtil.</p>
+            <p class="hero-subtitle">Fabricante líder em Santa Cruz do Capibaribe. Malhas exclusivas, estampas modernas
+                e o melhor preço do mercado têxtil.</p>
             <div class="hero-btns">
                 <a href="vendedores.html" class="btn-primary">Falar com um Consultor</a>
                 <a href="#catalogo-nativo" class="btn-outline">Confira nosso Catálogo</a>
@@ -56,15 +58,18 @@
         <div style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap; max-width: 1200px; margin: 0 auto;">
             <div style="flex: 1; min-width: 300px;">
                 <div class="malha-slider">
-                    <div class="malha-slide active"><img src="img/malha-leila-destaque.jpg" alt="Malha Leila Original"></div>
-                    <div class="malha-slide"><img src="img/malha-leila-destaque2.jpg" alt="Malha Leila Destaque 2"></div>
-                    <div class="malha-slide"><img src="img/malha-leila-destaque3.jpg" alt="Malha Leila Destaque 3"></div>
+                    <div class="malha-slide active"><img src="img/malha-leila-destaque.jpg" alt="Malha Leila Original">
+                    </div>
+                    <div class="malha-slide"><img src="img/malha-leila-destaque2.jpg" alt="Malha Leila Destaque 2">
+                    </div>
+                    <div class="malha-slide"><img src="img/malha-leila-destaque3.jpg" alt="Malha Leila Destaque 3">
+                    </div>
                 </div>
             </div>
             <div style="flex: 1; min-width: 300px;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 20px;">A Autêntica Malha Leila</h2>
                 <p style="color: var(--text-muted); margin-bottom: 25px; font-size: 1.1rem;">
-                    Cuidado com imitações. A A'Veloz Têxtil é a criadora e fabricante oficial da legítima Malha Leila. 
+                    Cuidado com imitações. A A'Veloz Têxtil é a criadora e fabricante oficial da legítima Malha Leila.
                     Utilizamos fios nobres selecionados para garantir o toque e a durabilidade que sua confecção merece.
                 </p>
                 <ul style="list-style: none; margin-bottom: 30px;">
@@ -75,7 +80,8 @@
                         <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Cores que não desbotam
                     </li>
                     <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;">
-                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Pronta entrega para todo o Brasil
+                        <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Pronta entrega para todo
+                        o Brasil
                     </li>
                 </ul>
                 <a href="#catalogo-nativo" class="btn-primary">Ver Catálogo de Cores</a>
@@ -83,94 +89,113 @@
         </div>
     </section>
 
-<!-- SEÇÃO DE CATÁLOGO NATIVO - A'VELOZ TÊXTIL -->
-<section class="catalogo-container" id="catalogo-nativo">
-    <!-- ========================================================================
+    <!-- SEÇÃO DE CATÁLOGO NATIVO - A'VELOZ TÊXTIL -->
+    <section class="catalogo-container" id="catalogo-nativo">
+        <!-- ========================================================================
          HEADER DO FILTRO - BOTÃO TODOS + BUSCADOR
          ======================================================================== -->
-    <div class="catalogo-header">
-        <div class="catalogo-header-content">
-            <h2 class="catalogo-titulo">Catálogo Nativo</h2>
-            
-            <div class="catalogo-controls">
-                <!-- Botão TODOS -->
-                <button class="catalogo-btn-todos" onclick="mudarArtigo('todos')">
-                    <i class="fas fa-th"></i> TODOS
-                </button>
-                
-                <!-- Buscador -->
-                <div class="catalogo-search-wrapper">
-                    <i class="fas fa-search"></i>
-                    <input 
-                        type="text" 
-                        id="catalogo-search" 
-                        class="catalogo-search-input" 
-                        placeholder="Buscar artigo..."
-                        onkeyup="buscarArtigo(this.value)"
-                    >
+        <div class="catalogo-header">
+            <div class="catalogo-header-content">
+                <h2 class="catalogo-titulo">Catálogo Nativo</h2>
+
+                <div class="catalogo-controls">
+                    <!-- Botão TODOS -->
+                    <button class="catalogo-btn-todos" onclick="mudarArtigo('todos')">
+                        <i class="fas fa-th"></i> TODOS
+                    </button>
+
+                    <!-- Buscador -->
+                    <div class="catalogo-search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="catalogo-search" class="catalogo-search-input"
+                            placeholder="Buscar artigo..." onkeyup="buscarArtigo(this.value)">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ========================================================================
+        <!-- ========================================================================
          FILTROS ORGANIZADOS EM GRID
          ======================================================================== -->
-    <div class="catalogo-filtros-grid">
-        <button class="catalogo-filtro-btn active" data-artigo="todos" onclick="mudarArtigo('todos')">TODOS</button>
-    
-        <button class="catalogo-filtro-btn" data-artigo="barbie" onclick="mudarArtigo('barbie')">BARBIE</button>
-        <button class="catalogo-filtro-btn" data-artigo="cotton-listrado" onclick="mudarArtigo('cotton-listrado')">COTTON LISTRADO</button>
-        <button class="catalogo-filtro-btn" data-artigo="crepe-liverpool" onclick="mudarArtigo('crepe-liverpool')">CREPE LIVERPOOL</button>
-        <button class="catalogo-filtro-btn" data-artigo="dry-fit-colmeia" onclick="mudarArtigo('dry-fit-colmeia')">DRY FIT COLMEIA</button>
-        <button class="catalogo-filtro-btn" data-artigo="dry-grao-de-arroz" onclick="mudarArtigo('dry-grao-de-arroz')">DRY GRAO DE ARROZ</button>
-        <button class="catalogo-filtro-btn" data-artigo="duna" onclick="mudarArtigo('duna')">DUNA</button>
-        <button class="catalogo-filtro-btn" data-artigo="fio-torcido-listrado" onclick="mudarArtigo('fio-torcido-listrado')">FIO TORCIDO LISTRADO</button>
-        <button class="catalogo-filtro-btn" data-artigo="liganete" onclick="mudarArtigo('liganete')">LIGANETE</button>
-        <button class="catalogo-filtro-btn" data-artigo="london" onclick="mudarArtigo('london')">LONDON</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-algodao" onclick="mudarArtigo('malha-algodao')">MALHA ALGODÃO</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-bale" onclick="mudarArtigo('malha-bale')">MALHA BALE</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-bally" onclick="mudarArtigo('malha-bally')">MALHA BALLY</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-canelada" onclick="mudarArtigo('malha-canelada')">MALHA CANELADA</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-canelada-de-suede" onclick="mudarArtigo('malha-canelada-de-suede')">MALHA CANELADA DE SUEDE</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-crepe" onclick="mudarArtigo('malha-crepe')">MALHA CREPE</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-fio-torcido" onclick="mudarArtigo('malha-fio-torcido')">MALHA FIO TORCIDO</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-helanca" onclick="mudarArtigo('malha-helanca')">MALHA HELANCA</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-laisy" onclick="mudarArtigo('malha-laisy')">MALHA LAISY</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-leila-kids" onclick="mudarArtigo('malha-leila-kids')">MALHA LEILA KIDS</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-leila-sublimacao" onclick="mudarArtigo('malha-leila-sublimacao')">MALHA LEILA SUBLIMAÇÃO</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-montaria" onclick="mudarArtigo('malha-montaria')">MALHA MONTARIA</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-pp" onclick="mudarArtigo('malha-pp')">MALHA PP</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-pv" onclick="mudarArtigo('malha-pv')">MALHA PV</button>
-        <button class="catalogo-filtro-btn" data-artigo="malha-suede" onclick="mudarArtigo('malha-suede')">MALHA SUEDE</button>
-        <button class="catalogo-filtro-btn" data-artigo="microfibra" onclick="mudarArtigo('microfibra')">MICROFIBRA</button>
-        <button class="catalogo-filtro-btn" data-artigo="moletom" onclick="mudarArtigo('moletom')">MOLETOM</button>
-        <button class="catalogo-filtro-btn" data-artigo="romantic" onclick="mudarArtigo('romantic')">ROMANTIC</button>
-        <button class="catalogo-filtro-btn" data-artigo="romantic-prime" onclick="mudarArtigo('romantic-prime')">ROMANTIC PRIME</button>
-        <button class="catalogo-filtro-btn" data-artigo="suplex" onclick="mudarArtigo('suplex')">SUPLEX</button>
-        <button class="catalogo-filtro-btn" data-artigo="tule" onclick="mudarArtigo('tule')">TULE</button>
-        <button class="catalogo-filtro-btn" data-artigo="valentino" onclick="mudarArtigo('valentino')">VALENTINO</button>
-        <button class="catalogo-filtro-btn" data-artigo="viscolycra" onclick="mudarArtigo('viscolycra')">VISCOLYCRA</button>
-    </div>
+        <div class="catalogo-filtros-grid">
+            <button class="catalogo-filtro-btn active" data-artigo="todos" onclick="mudarArtigo('todos')">TODOS</button>
 
-    <!-- ========================================================================
+            <button class="catalogo-filtro-btn" data-artigo="barbie" onclick="mudarArtigo('barbie')">BARBIE</button>
+            <button class="catalogo-filtro-btn" data-artigo="cotton-listrado"
+                onclick="mudarArtigo('cotton-listrado')">COTTON LISTRADO</button>
+            <button class="catalogo-filtro-btn" data-artigo="crepe-liverpool"
+                onclick="mudarArtigo('crepe-liverpool')">CREPE LIVERPOOL</button>
+            <button class="catalogo-filtro-btn" data-artigo="dry-fit-colmeia"
+                onclick="mudarArtigo('dry-fit-colmeia')">DRY FIT COLMEIA</button>
+            <button class="catalogo-filtro-btn" data-artigo="dry-grao-de-arroz"
+                onclick="mudarArtigo('dry-grao-de-arroz')">DRY GRAO DE ARROZ</button>
+            <button class="catalogo-filtro-btn" data-artigo="duna" onclick="mudarArtigo('duna')">DUNA</button>
+            <button class="catalogo-filtro-btn" data-artigo="fio-torcido-listrado"
+                onclick="mudarArtigo('fio-torcido-listrado')">FIO TORCIDO LISTRADO</button>
+            <button class="catalogo-filtro-btn" data-artigo="liganete"
+                onclick="mudarArtigo('liganete')">LIGANETE</button>
+            <button class="catalogo-filtro-btn" data-artigo="london" onclick="mudarArtigo('london')">LONDON</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-algodao" onclick="mudarArtigo('malha-algodao')">MALHA
+                ALGODÃO</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-bally" onclick="mudarArtigo('malha-bally')">MALHA
+                BALLY</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-canelada"
+                onclick="mudarArtigo('malha-canelada')">MALHA CANELADA</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-canelada-de-suede"
+                onclick="mudarArtigo('malha-canelada-de-suede')">MALHA CANELADA DE SUEDE</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-crepe" onclick="mudarArtigo('malha-crepe')">MALHA
+                CREPE</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-fio-torcido"
+                onclick="mudarArtigo('malha-fio-torcido')">MALHA FIO TORCIDO</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-helanca" onclick="mudarArtigo('malha-helanca')">MALHA
+                HELANCA</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-laisy" onclick="mudarArtigo('malha-laisy')">MALHA
+                LAISY</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-leila-kids"
+                onclick="mudarArtigo('malha-leila-kids')">MALHA LEILA KIDS</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-leila-sublimacao"
+                onclick="mudarArtigo('malha-leila-sublimacao')">MALHA LEILA SUBLIMAÇÃO</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-montaria"
+                onclick="mudarArtigo('malha-montaria')">MALHA MONTARIA</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-pp" onclick="mudarArtigo('malha-pp')">MALHA
+                PP</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-pv" onclick="mudarArtigo('malha-pv')">MALHA
+                PV</button>
+            <button class="catalogo-filtro-btn" data-artigo="malha-suede" onclick="mudarArtigo('malha-suede')">MALHA
+                SUEDE</button>
+            <button class="catalogo-filtro-btn" data-artigo="microfibra"
+                onclick="mudarArtigo('microfibra')">MICROFIBRA</button>
+            <button class="catalogo-filtro-btn" data-artigo="moletom" onclick="mudarArtigo('moletom')">MOLETOM</button>
+            <button class="catalogo-filtro-btn" data-artigo="romantic"
+                onclick="mudarArtigo('romantic')">ROMANTIC</button>
+            <button class="catalogo-filtro-btn" data-artigo="romantic-prime"
+                onclick="mudarArtigo('romantic-prime')">ROMANTIC PRIME</button>
+            <button class="catalogo-filtro-btn" data-artigo="suplex" onclick="mudarArtigo('suplex')">SUPLEX</button>
+            <button class="catalogo-filtro-btn" data-artigo="tule" onclick="mudarArtigo('tule')">TULE</button>
+            <button class="catalogo-filtro-btn" data-artigo="valentino"
+                onclick="mudarArtigo('valentino')">VALENTINO</button>
+            <button class="catalogo-filtro-btn" data-artigo="viscolycra"
+                onclick="mudarArtigo('viscolycra')">VISCOLYCRA</button>
+        </div>
+
+        <!-- ========================================================================
          GRID DE PRODUTOS - ORGANIZADO E LIMPO
          ======================================================================== -->
-    <div class="grid-catalogo" id="grid-catalogo">
-        <!-- Os produtos serão renderizados aqui pelo JavaScript -->
-    </div>
+        <div class="grid-catalogo" id="grid-catalogo">
+            <!-- Os produtos serão renderizados aqui pelo JavaScript -->
+        </div>
 
-    <!-- Mensagem quando nenhum produto é encontrado -->
-    <div id="nenhum-resultado" class="nenhum-resultado" style="display: none;">
-        <p>Nenhum artigo encontrado. Tente outra busca.</p>
-    </div>
-</section>
+        <!-- Mensagem quando nenhum produto é encontrado -->
+        <div id="nenhum-resultado" class="nenhum-resultado" style="display: none;">
+            <p>Nenhum artigo encontrado. Tente outra busca.</p>
+        </div>
+    </section>
 
-        <!-- Conteúdo do Artigo -->
+    <!-- Conteúdo do Artigo -->
+    <div class="catalogo-content">
+
+
         <div class="catalogo-content">
-
-
-            <div class="catalogo-content">
 
             <!-- cotton-listrado -->
             <div class="catalogo-artigo active" data-artigo="cotton-listrado">
@@ -184,8 +209,10 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-cotton-listrado">
-                            <img src="img/catalogo/cotton-listrado/foto-1.jpg" alt="Cotton Listrado - Foto 1" class="slide-img">
-                            <img src="img/catalogo/cotton-listrado/foto-2.jpg" alt="Cotton Listrado - Foto 2" class="slide-img">
+                            <img src="img/catalogo/cotton-listrado/foto-1.jpg" alt="Cotton Listrado - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/cotton-listrado/foto-2.jpg" alt="Cotton Listrado - Foto 2"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -197,9 +224,9 @@
                     <div class="slider-dots" id="dots-cotton-listrado"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- barbie -->
+            <!-- barbie -->
             <div class="catalogo-artigo active" data-artigo="barbie">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Barbie</h2>
@@ -228,9 +255,9 @@
                     <div class="slider-dots" id="dots-barbie"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- crepe-liverpool -->
+            <!-- crepe-liverpool -->
             <div class="catalogo-artigo active" data-artigo="crepe-liverpool">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Crepe Liverpool</h2>
@@ -242,8 +269,10 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-crepe-liverpool">
-                            <img src="img/catalogo/crepe-liverpool/foto-1.jpg" alt="Crepe Liverpool - Foto 1" class="slide-img">
-                            <img src="img/catalogo/crepe-liverpool/foto-2.jpg" alt="Crepe Liverpool - Foto 2" class="slide-img">
+                            <img src="img/catalogo/crepe-liverpool/foto-1.jpg" alt="Crepe Liverpool - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/crepe-liverpool/foto-2.jpg" alt="Crepe Liverpool - Foto 2"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -255,9 +284,9 @@
                     <div class="slider-dots" id="dots-crepe-liverpool"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- dry grao de arroz-->
+            <!-- dry grao de arroz-->
             <div class="catalogo-artigo active" data-artigo="dry-grao-de-arroz">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Dry Grão de Arroz</h2>
@@ -269,8 +298,10 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-dry-grao-de-arroz">
-                            <img src="img/catalogo/dry-grao-de-arroz/foto-1.jpg" alt="Dry Grão de Arroz - Foto 1" class="slide-img">
-                            <img src="img/catalogo/dry-grao-de-arroz/foto-2.jpg" alt="Dry Grão de Arroz - Foto 2" class="slide-img">
+                            <img src="img/catalogo/dry-grao-de-arroz/foto-1.jpg" alt="Dry Grão de Arroz - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/dry-grao-de-arroz/foto-2.jpg" alt="Dry Grão de Arroz - Foto 2"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -282,9 +313,9 @@
                     <div class="slider-dots" id="dots-dry-grao-de-arroz"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                            <!-- dry fit colmeia-->
+            <!-- dry fit colmeia-->
             <div class="catalogo-artigo active" data-artigo="dry-fit-colmeia">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Dry Fit Colmeia</h2>
@@ -296,9 +327,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-dry-fit-colmeia">
-                            <img src="img/catalogo/dry-fit-colmeia/foto-1.jpg" alt="Dry Fit Colmeia - Foto 1" class="slide-img">
-                            <img src="img/catalogo/dry-fit-colmeia/foto-2.jpg" alt="Dry Fit Colmeia - Foto 2" class="slide-img">
-                            <img src="img/catalogo/dry-fit-colmeia/foto-3.jpg" alt="Dry Fit Colmeia - Foto 3" class="slide-img">
+                            <img src="img/catalogo/dry-fit-colmeia/foto-1.jpg" alt="Dry Fit Colmeia - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/dry-fit-colmeia/foto-2.jpg" alt="Dry Fit Colmeia - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/dry-fit-colmeia/foto-3.jpg" alt="Dry Fit Colmeia - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -310,7 +344,7 @@
                     <div class="slider-dots" id="dots-dry-fit-colmeia"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- duna -->
             <div class="catalogo-artigo active" data-artigo="duna">
@@ -338,7 +372,7 @@
                     <div class="slider-dots" id="dots-duna"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- fio torcido listrado-->
             <div class="catalogo-artigo active" data-artigo="fio-torcido-listrado">
@@ -352,9 +386,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-fio-torcido-listrado">
-                            <img src="img/catalogo/fio-torcido-listrado/foto-1.jpg" alt="Fio Torcido Listrado - Foto 1" class="slide-img">
-                            <img src="img/catalogo/fio-torcido-listrado/foto-2.jpg" alt="Fio Torcido Listrado - Foto 2" class="slide-img">
-                            <img src="img/catalogo/fio-torcido-listrado/foto-3.jpg" alt="Fio Torcido Listrado - Foto 3" class="slide-img">
+                            <img src="img/catalogo/fio-torcido-listrado/foto-1.jpg" alt="Fio Torcido Listrado - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/fio-torcido-listrado/foto-2.jpg" alt="Fio Torcido Listrado - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/fio-torcido-listrado/foto-3.jpg" alt="Fio Torcido Listrado - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -366,9 +403,9 @@
                     <div class="slider-dots" id="dots-fio-torcido-listrado"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- liganete -->
+            <!-- liganete -->
             <div class="catalogo-artigo active" data-artigo="liganete">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Liganete</h2>
@@ -394,9 +431,9 @@
                     <div class="slider-dots" id="dots-liganete"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- london -->
+            <!-- london -->
             <div class="catalogo-artigo active" data-artigo="london">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">London</h2>
@@ -422,7 +459,7 @@
                     <div class="slider-dots" id="dots-london"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- Malha Algodao -->
             <div class="catalogo-artigo active" data-artigo="malha-algodao">
@@ -436,9 +473,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-algodao">
-                            <img src="img/catalogo/malha-algodao/foto-1.jpg" alt="Malha Algodão - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-algodao/foto-2.jpg" alt="Malha Algodão - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-algodao/foto-3.jpg" alt="Malha Algodão - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-algodao/foto-1.jpg" alt="Malha Algodão - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-algodao/foto-2.jpg" alt="Malha Algodão - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-algodao/foto-3.jpg" alt="Malha Algodão - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -450,7 +490,7 @@
                     <div class="slider-dots" id="dots-malha-algodao"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- Malha Bally -->
             <div class="catalogo-artigo active" data-artigo="malha-bally">
@@ -478,7 +518,7 @@
                     <div class="slider-dots" id="dots-malha-bally"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha canelada -->
             <div class="catalogo-artigo active" data-artigo="malha-canelada">
@@ -492,9 +532,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-canelada">
-                            <img src="img/catalogo/malha-canelada/foto-1.jpg" alt="Malha Canelada - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-canelada/foto-2.jpg" alt="Malha Canelada - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-canelada/foto-3.jpg" alt="Malha Canelada - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-canelada/foto-1.jpg" alt="Malha Canelada - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-canelada/foto-2.jpg" alt="Malha Canelada - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-canelada/foto-3.jpg" alt="Malha Canelada - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -506,8 +549,8 @@
                     <div class="slider-dots" id="dots-malha-canelada"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
-        
+            <!-- Copiar até aqui para o próximo artigo -->
+
             <!-- malha canelada de suede -->
             <div class="catalogo-artigo active" data-artigo="malha-canelada-de-suede">
                 <div class="artigo-header">
@@ -520,9 +563,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-canelada-de-suede">
-                            <img src="img/catalogo/malha-canelada-de-suede/foto-1.jpg" alt="Malha Canelada de Suede - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-canelada-de-suede/foto-2.jpg" alt="Malha Canelada de Suede - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-canelada-de-suede/foto-3.jpg" alt="Malha Canelada de Suede - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-canelada-de-suede/foto-1.jpg"
+                                alt="Malha Canelada de Suede - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-canelada-de-suede/foto-2.jpg"
+                                alt="Malha Canelada de Suede - Foto 2" class="slide-img">
+                            <img src="img/catalogo/malha-canelada-de-suede/foto-3.jpg"
+                                alt="Malha Canelada de Suede - Foto 3" class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -534,7 +580,7 @@
                     <div class="slider-dots" id="dots-malha-canelada-de-suede"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha crepe -->
             <div class="catalogo-artigo active" data-artigo="malha-crepe">
@@ -562,9 +608,9 @@
                     <div class="slider-dots" id="dots-malha-crepe"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                <!-- malha fio torcido -->
+            <!-- malha fio torcido -->
             <div class="catalogo-artigo active" data-artigo="malha-fio-torcido">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Malha Fio Torcido</h2>
@@ -576,9 +622,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-fio-torcido">
-                            <img src="img/catalogo/malha-fio-torcido/foto-1.jpg" alt="Malha Fio Torcido - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-fio-torcido/foto-2.jpg" alt="Malha Fio Torcido - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-fio-torcido/foto-3.jpg" alt="Malha Fio Torcido - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-fio-torcido/foto-1.jpg" alt="Malha Fio Torcido - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-fio-torcido/foto-2.jpg" alt="Malha Fio Torcido - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-fio-torcido/foto-3.jpg" alt="Malha Fio Torcido - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -590,7 +639,7 @@
                     <div class="slider-dots" id="dots-malha-fio-torcido"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha helanca -->
             <div class="catalogo-artigo active" data-artigo="malha-helanca">
@@ -604,9 +653,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-helanca">
-                            <img src="img/catalogo/malha-helanca/foto-1.jpg" alt="Malha Helanca - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-helanca/foto-2.jpg" alt="Malha Helanca - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-helanca/foto-3.jpg" alt="Malha Helanca - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-helanca/foto-1.jpg" alt="Malha Helanca - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-helanca/foto-2.jpg" alt="Malha Helanca - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-helanca/foto-3.jpg" alt="Malha Helanca - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -618,9 +670,9 @@
                     <div class="slider-dots" id="dots-malha-helanca"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                <!-- malha laisy -->
+            <!-- malha laisy -->
             <div class="catalogo-artigo active" data-artigo="malha-laisy">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Malha Laisy</h2>
@@ -646,7 +698,7 @@
                     <div class="slider-dots" id="dots-malha-laisy"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha leila kids -->
             <div class="catalogo-artigo active" data-artigo="malha-leila-kids">
@@ -660,9 +712,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-leila-kids">
-                            <img src="img/catalogo/malha-leila-kids/foto-1.jpg" alt="Malha Leila Kids - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-leila-kids/foto-2.jpg" alt="Malha Leila Kids - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-leila-kids/foto-3.jpg" alt="Malha Leila Kids - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-leila-kids/foto-1.jpg" alt="Malha Leila Kids - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-leila-kids/foto-2.jpg" alt="Malha Leila Kids - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-leila-kids/foto-3.jpg" alt="Malha Leila Kids - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -674,7 +729,7 @@
                     <div class="slider-dots" id="dots-malha-leila-kids"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha-leila-sublimacao -->
             <div class="catalogo-artigo active" data-artigo="malha-leila-sublimacao">
@@ -688,9 +743,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-leila-sublimacao">
-                            <img src="img/catalogo/malha-leila-sublimacao/foto-1.jpg" alt="Malha Leila Sublimação - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-leila-sublimacao/foto-2.jpg" alt="Malha Leila Sublimação - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-leila-sublimacao/foto-3.jpg" alt="Malha Leila Sublimação - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-leila-sublimacao/foto-1.jpg"
+                                alt="Malha Leila Sublimação - Foto 1" class="slide-img">
+                            <img src="img/catalogo/malha-leila-sublimacao/foto-2.jpg"
+                                alt="Malha Leila Sublimação - Foto 2" class="slide-img">
+                            <img src="img/catalogo/malha-leila-sublimacao/foto-3.jpg"
+                                alt="Malha Leila Sublimação - Foto 3" class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -702,7 +760,7 @@
                     <div class="slider-dots" id="dots-malha-leila-sublimacao"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha montaria -->
             <div class="catalogo-artigo active" data-artigo="malha-montaria">
@@ -716,9 +774,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-malha-montaria">
-                            <img src="img/catalogo/malha-montaria/foto-1.jpg" alt="Malha Montaria - Foto 1" class="slide-img">
-                            <img src="img/catalogo/malha-montaria/foto-2.jpg" alt="Malha Montaria - Foto 2" class="slide-img">
-                            <img src="img/catalogo/malha-montaria/foto-3.jpg" alt="Malha Montaria - Foto 3" class="slide-img">
+                            <img src="img/catalogo/malha-montaria/foto-1.jpg" alt="Malha Montaria - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-montaria/foto-2.jpg" alt="Malha Montaria - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/malha-montaria/foto-3.jpg" alt="Malha Montaria - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -730,7 +791,7 @@
                     <div class="slider-dots" id="dots-malha-montaria"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha pp -->
             <div class="catalogo-artigo active" data-artigo="malha-pp">
@@ -758,7 +819,7 @@
                     <div class="slider-dots" id="dots-malha-pp"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha PV -->
             <div class="catalogo-artigo active" data-artigo="malha-pv">
@@ -786,7 +847,7 @@
                     <div class="slider-dots" id="dots-malha-pv"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- malha suede -->
             <div class="catalogo-artigo active" data-artigo="malha-suede">
@@ -814,9 +875,9 @@
                     <div class="slider-dots" id="dots-malha-suede"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- Microfibra -->
+            <!-- Microfibra -->
             <div class="catalogo-artigo active" data-artigo="microfibra">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Microfibra</h2>
@@ -842,7 +903,7 @@
                     <div class="slider-dots" id="dots-microfibra"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- moletom -->
             <div class="catalogo-artigo active" data-artigo="moletom">
@@ -870,7 +931,7 @@
                     <div class="slider-dots" id="dots-moletom"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- romantic -->
             <div class="catalogo-artigo active" data-artigo="romantic">
@@ -898,7 +959,7 @@
                     <div class="slider-dots" id="dots-romantic"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- romantic prime -->
             <div class="catalogo-artigo active" data-artigo="romantic-prime">
@@ -912,9 +973,12 @@
                 <div class="slider-container">
                     <div class="slider-wrapper">
                         <div class="slider" id="slider-romantic-prime">
-                            <img src="img/catalogo/romantic-prime/foto-1.jpg" alt="Romantic Prime - Foto 1" class="slide-img">
-                            <img src="img/catalogo/romantic-prime/foto-2.jpg" alt="Romantic Prime - Foto 2" class="slide-img">
-                            <img src="img/catalogo/romantic-prime/foto-3.jpg" alt="Romantic Prime - Foto 3" class="slide-img">
+                            <img src="img/catalogo/romantic-prime/foto-1.jpg" alt="Romantic Prime - Foto 1"
+                                class="slide-img">
+                            <img src="img/catalogo/romantic-prime/foto-2.jpg" alt="Romantic Prime - Foto 2"
+                                class="slide-img">
+                            <img src="img/catalogo/romantic-prime/foto-3.jpg" alt="Romantic Prime - Foto 3"
+                                class="slide-img">
                         </div>
                     </div>
                     <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
@@ -926,7 +990,7 @@
                     <div class="slider-dots" id="dots-romantic-prime"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- suplex -->
             <div class="catalogo-artigo active" data-artigo="suplex">
@@ -954,7 +1018,7 @@
                     <div class="slider-dots" id="dots-suplex"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- tule -->
             <div class="catalogo-artigo active" data-artigo="tule">
@@ -982,7 +1046,7 @@
                     <div class="slider-dots" id="dots-tule"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- valentino -->
             <div class="catalogo-artigo active" data-artigo="valentino">
@@ -1010,7 +1074,7 @@
                     <div class="slider-dots" id="dots-valentino"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
             <!-- viscolycra -->
             <div class="catalogo-artigo active" data-artigo="viscolycra">
@@ -1038,12 +1102,12 @@
                     <div class="slider-dots" id="dots-viscolycra"></div>
                 </div>
             </div>
-        <!-- Copiar até aqui para o próximo artigo -->
+            <!-- Copiar até aqui para o próximo artigo -->
 
-        
+
         </div>
     </div>
-</section>
+    </section>
 
 
     <!-- Diferenciais -->
@@ -1073,17 +1137,20 @@
         <h2 class="section-title">O que dizem nossos parceiros</h2>
         <div class="vendedores-grid">
             <div class="vendedor-card">
-                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A qualidade da Malha Leila da A'Veloz é o diferencial das minhas coleções. Atendimento nota 10!"</p>
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A qualidade da Malha
+                    Leila da A'Veloz é o diferencial das minhas coleções. Atendimento nota 10!"</p>
                 <strong>Mariana Ribeiro</strong>
                 <small style="display: block; color: var(--dark); margin-top: 5px;">Fabricante de Moda Feminina</small>
             </div>
             <div class="vendedor-card">
-                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"Fornecedor de confiança há anos. A agilidade na entrega para o atacado é impressionante."</p>
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"Fornecedor de confiança
+                    há anos. A agilidade na entrega para o atacado é impressionante."</p>
                 <strong>Paulo Henrique</strong>
                 <small style="display: block; color: var(--dark); margin-top: 5px;">Confecção Infantil</small>
             </div>
             <div class="vendedor-card">
-                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A rapidez na entrega e a atenção ao detalhe fazem da A'Veloz Têxtil a minha loja favorita para compras de tecidos."</p>
+                <p style="font-style: italic; margin-bottom: 15px; color: var(--text-muted);">"A rapidez na entrega e a
+                    atenção ao detalhe fazem da A'Veloz Têxtil a minha loja favorita para compras de tecidos."</p>
                 <strong>Juliana Porto Ferreira</strong>
                 <small style="display: block; color: var(--dark); margin-top: 5px;">Fabricante de Moda Feminina</small>
             </div>
@@ -1092,13 +1159,16 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto 60px; text-align: left;">
+        <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; max-width: 1200px; margin: 0 auto 60px; text-align: left;">
             <div>
                 <a href="index.html" class="footer-logo">A'VELOZ <span>TÊXTIL</span></a>
-                <p style="margin-top: 25px; color: #aaa; line-height: 1.8;">Há mais de uma década tecendo qualidade e inovação direto de Santa Cruz do Capibaribe para todo o Brasil.</p>
+                <p style="margin-top: 25px; color: #aaa; line-height: 1.8;">Há mais de uma década tecendo qualidade e
+                    inovação direto de Santa Cruz do Capibaribe para todo o Brasil.</p>
             </div>
             <div>
-                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">Institucional</h4>
+                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                    Institucional</h4>
                 <p style="color: #aaa; font-size: 14px; line-height: 2.2;">
                     CNPJ: 07.573.578/0001-86<br>
                     A'Veloz Indústria Têxtil LTDA<br>
@@ -1106,17 +1176,22 @@
                 </p>
             </div>
             <div>
-                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">Redes Sociais</h4>
+                <h4 style="color: var(--primary); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;">
+                    Redes Sociais</h4>
                 <div style="display: flex; gap: 20px;">
-                    <a href="https://instagram.com/aveloztextil" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/aveloz.textil/" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/@aveloztextil" target="_blank" style="color: white; font-size: 28px;"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://instagram.com/aveloztextil" target="_blank"
+                        style="color: white; font-size: 28px;"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/aveloz.textil/" target="_blank"
+                        style="color: white; font-size: 28px;"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@aveloztextil" target="_blank"
+                        style="color: white; font-size: 28px;"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div style="border-top: 1px solid #333; text-align: center; color: #666; font-size: 13px; padding-top: 40px;">
             &copy; 2026 A'Veloz Têxtil - Todos os direitos reservados. <br>
-            Tecnologia e Design por <a href="https://devalbk.com.br" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">DEV ALBK</a>
+            Tecnologia e Design por <a href="https://devalbk.com.br" target="_blank"
+                style="color: var(--primary); text-decoration: none; font-weight: 600;">DEV ALBK</a>
         </div>
     </footer>
 
@@ -1126,14 +1201,14 @@
         let currentSlide = 0;
 
         function nextSlide() {
-            if(slides.length > 0) {
+            if (slides.length > 0) {
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
             }
         }
 
-        if(slides.length > 1) {
+        if (slides.length > 1) {
             setInterval(nextSlide, 5000);
         }
 
@@ -1157,4 +1232,5 @@
     <script src="js/script.js"></script>
 
 </body>
+
 </html>

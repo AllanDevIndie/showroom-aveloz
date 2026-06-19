@@ -13,8 +13,8 @@ async function carregarDados() {
     if (!grid) return;
 
     // Skeleton Screen
-    grid.innerHTML = ''; 
-    for(let i=0; i<6; i++) { 
+    grid.innerHTML = '';
+    for (let i = 0; i < 6; i++) {
         grid.innerHTML += `
             <div class="skeleton-card">
                 <div class="skeleton-img"></div>
@@ -31,8 +31,8 @@ async function carregarDados() {
     try {
         const response = await fetch(SHEET_URL);
         const data = await response.text();
-        const linhas = data.split(/\r?\n/).filter(l => l.trim() !== "").slice(1); 
-        
+        const linhas = data.split(/\r?\n/).filter(l => l.trim() !== "").slice(1);
+
         todosOsProdutos = linhas.map(linha => {
             const colunas = parseCSV(linha);
             if (colunas.length >= 4) {
@@ -73,9 +73,9 @@ function gerarFiltrosAutomaticos(produtos) {
 
     const categorias = [...new Set(produtos.map(p => p.categoria))].sort();
     let htmlBotoes = `<button class="filter-btn active" onclick="filtrar('todos', this)">Todos os Estilos</button>`;
-    
+
     categorias.forEach(cat => {
-        if(cat) {
+        if (cat) {
             htmlBotoes += `<button class="filter-btn" onclick="filtrar('${cat}', this)">${cat}</button>`;
         }
     });
@@ -83,15 +83,15 @@ function gerarFiltrosAutomaticos(produtos) {
     containerFiltros.innerHTML = htmlBotoes;
 }
 
-window.filtrar = function(categoria, botao) {
+window.filtrar = function (categoria, botao) {
     const botoes = document.querySelectorAll('.filter-btn');
     botoes.forEach(b => b.classList.remove('active'));
     botao.classList.add('active');
 
-    const filtrados = categoria.toLowerCase() === 'todos' 
-        ? todosOsProdutos 
+    const filtrados = categoria.toLowerCase() === 'todos'
+        ? todosOsProdutos
         : todosOsProdutos.filter(p => p.categoria.toLowerCase() === categoria.toLowerCase());
-    
+
     renderizarProdutos(filtrados);
 }
 
@@ -103,7 +103,7 @@ function renderizarProdutos(lista) {
     lista.forEach((p, index) => {
         const card = document.createElement('div');
         card.className = 'produto-card';
-        
+
         const estaNoCarrinho = typeof carrinho !== 'undefined' && carrinho.some(item => item.id === p.id);
         const fotoPrincipal = `${IMG_PATH}${p.fotos[0]}`;
 
@@ -146,12 +146,12 @@ function normalizarTexto(texto) {
 
 function configurarPesquisa() {
     const input = document.getElementById('search-input');
-    if(!input) return;
+    if (!input) return;
 
     input.oninput = (e) => {
         const termo = normalizarTexto(e.target.value);
-        const filtrados = todosOsProdutos.filter(p => 
-            normalizarTexto(p.nome).includes(termo) || 
+        const filtrados = todosOsProdutos.filter(p =>
+            normalizarTexto(p.nome).includes(termo) ||
             normalizarTexto(p.categoria).includes(termo) ||
             normalizarTexto(p.id).includes(termo) ||
             normalizarTexto(p.artigos).includes(termo)
