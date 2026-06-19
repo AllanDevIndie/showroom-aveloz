@@ -136,17 +136,25 @@ function renderizarProdutos(lista) {
     });
 }
 
+function normalizarTexto(texto) {
+    return (texto || '')
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
+
 function configurarPesquisa() {
     const input = document.getElementById('search-input');
     if(!input) return;
 
     input.oninput = (e) => {
-        const termo = e.target.value.toLowerCase();
+        const termo = normalizarTexto(e.target.value);
         const filtrados = todosOsProdutos.filter(p => 
-            p.nome.toLowerCase().includes(termo) || 
-            p.categoria.toLowerCase().includes(termo) ||
-            p.id.toLowerCase().includes(termo) ||
-            p.artigos.toLowerCase().includes(termo)
+            normalizarTexto(p.nome).includes(termo) || 
+            normalizarTexto(p.categoria).includes(termo) ||
+            normalizarTexto(p.id).includes(termo) ||
+            normalizarTexto(p.artigos).includes(termo)
         );
         renderizarProdutos(filtrados);
     };

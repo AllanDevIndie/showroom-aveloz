@@ -10,12 +10,12 @@ let filtroState = {
     termoBusca: '',
     todosOsArtigos: [
         'todos', 'barbie', 'cotton-listrado', 'crepe-liverpool', 'dry-fit-colmeia',
-        'duna', 'fio-torcido-listrado', 'liganete', 'london', 'malha-algodao',
-        'malha-bale', 'malha-bally', 'malha-canelada', 'malha-canelada-suede',
-        'malha-crepe', 'malha-fio-torcido', 'malha-helanca', 'malha-laisy',
-        'malha-leila-kids', 'malha-leila-sublimacao', 'malha-montaria', 'malha-pp',
-        'malha-pv', 'malha-suede', 'microfibra', 'moletom', 'romantic',
-        'romantic-prime', 'suplex', 'tule', 'valentino', 'viscolycra'
+        'dry-grao-de-arroz', 'duna', 'fio-torcido-listrado', 'liganete', 'london',
+        'malha-algodao', 'malha-bale', 'malha-bally', 'malha-canelada',
+        'malha-canelada-de-suede', 'malha-crepe', 'malha-fio-torcido', 'malha-helanca',
+        'malha-laisy', 'malha-leila-kids', 'malha-leila-sublimacao', 'malha-montaria',
+        'malha-pp', 'malha-pv', 'malha-suede', 'microfibra', 'moletom',
+        'romantic', 'romantic-prime', 'suplex', 'tule', 'valentino', 'viscolycra'
     ]
 };
 
@@ -38,7 +38,6 @@ function contarSlidesAutomaticamente() {
 document.addEventListener('DOMContentLoaded', function() {
     catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
-    inicializarNavegacao();
     // Inicializar filtro e busca no catálogo quando disponível
     inicializarFiltro();
 });
@@ -149,6 +148,15 @@ function irParaSlide(artigo, indice) {
 // FILTRO COM BUSCA
 // ============================================================================
 
+// Helper para normalizar texto, removendo acentos e convertendo para minúsculas
+function normalizarTexto(texto) {
+    return texto
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
+
 function renderizarProdutos() {
     const nenhumResultado = document.getElementById('nenhum-resultado');
     const todosProdutos = document.querySelectorAll('.catalogo-artigo[data-artigo]');
@@ -156,14 +164,18 @@ function renderizarProdutos() {
 
     todosProdutos.forEach(produto => {
         const artigoDoProduto = produto.getAttribute('data-artigo');
-        const nomeProduto = produto.querySelector('.artigo-titulo')?.textContent.toLowerCase() || '';
-        const descricaoProduto = produto.querySelector('.artigo-descricao')?.textContent.toLowerCase() || '';
+        const nomeProduto = produto.querySelector('.artigo-titulo')?.textContent || '';
+        const descricaoProduto = produto.querySelector('.artigo-descricao')?.textContent || '';
         let mostrar = false;
 
         if (filtroState.termoBusca) {
-            mostrar = nomeProduto.includes(filtroState.termoBusca) ||
-                descricaoProduto.includes(filtroState.termoBusca) ||
-                artigoDoProduto.includes(filtroState.termoBusca);
+            const nomeNormalizado = normalizarTexto(nomeProduto);
+            const descricaoNormalizada = normalizarTexto(descricaoProduto);
+            const artigoNormalizado = normalizarTexto(artigoDoProduto || '');
+            
+            mostrar = nomeNormalizado.includes(filtroState.termoBusca) ||
+                descricaoNormalizada.includes(filtroState.termoBusca) ||
+                artigoNormalizado.includes(filtroState.termoBusca);
         } else if (filtroState.artigoAtual === 'todos') {
             mostrar = true;
         } else {
@@ -203,7 +215,7 @@ function mudarArtigo(artigo) {
 }
 
 function buscarArtigo(termo) {
-    filtroState.termoBusca = termo.toLowerCase().trim();
+    filtroState.termoBusca = normalizarTexto(termo);
 
     if (!filtroState.termoBusca) {
         mudarArtigo('todos');
