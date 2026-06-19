@@ -24,11 +24,9 @@
     <nav class="navbar">
         <a href="index.html" class="logo">A'VELOZ <span>IND TÊXTIL</span></a>
         <div class="nav-links">
-            <a href="index.html">Início</a>
-            <a href="#catalogo-nativo">Catálogo Nativo</a>
-            <a href="#novidades">Novidades</a>
+            <a href="#catalogo-nativo">Catálogo nativo</a>
+            <a href="digital.html">Estampas digitais</a>
             <a href="vendedores.html">Vendedores</a>
-            <a href="digital.html">Estampas Digitais</a>
         </div>
     </nav>
 
@@ -85,46 +83,86 @@
         </div>
     </section>
 
-    <!-- Showroom Section (Fotos) -->
 <!-- SEÇÃO DE CATÁLOGO NATIVO - A'VELOZ TÊXTIL -->
-<section class="catalogo-nativo" id="catalogo-nativo">
-    <div class="catalogo-container">
-        <!-- Navegação de Artigos -->
-        <nav class="catalogo-nav">
-            <button class="catalogo-nav-btn active" data-artigo="todos">Todos</button>
-            <button class="catalogo-nav-btn" data-artigo="barbie">Barbie</button>
-            <button class="catalogo-nav-btn" data-artigo="cotton-listrado">Cotton Listrado</button>
-            <button class="catalogo-nav-btn" data-artigo="crepe-liverpool">Crepe Liverpool</button>
-            <button class="catalogo-nav-btn" data-artigo="dry-fit-colmeia">Dry Fit Colmeia</button>
-            <button class="catalogo-nav-btn" data-artigo="duna">Duna</button>
-            <button class="catalogo-nav-btn" data-artigo="fio-torcido-listrado">Fio Torcido Listrado</button>
-            <button class="catalogo-nav-btn" data-artigo="liganete">Liganete</button>
-            <button class="catalogo-nav-btn" data-artigo="london">London</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-algodao">Malha Algodão</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-bale">Malha Bale</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-bally">Malha Bally</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-canelada">Malha Canelada</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-canelada-de-suede">Malha Canelada de Suede</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-crepe">Malha Crepe</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-fio-torcido">Malha Fio Torcido</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-helanca">Malha Helanca</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-laisy">Malha Laisy</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-leila-kids">Malha Leila Kids</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-leila-lisa">Malha Leila Lisa</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-leila-sublimacao">Malha Leila Sublimação</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-montaria">Malha Montaria</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-pp">Malha PP</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-pv">Malha PV</button>
-            <button class="catalogo-nav-btn" data-artigo="malha-suede">Malha Suede</button>
-            <button class="catalogo-nav-btn" data-artigo="microfibra">Microfibra</button>
-            <button class="catalogo-nav-btn" data-artigo="moletom">Moletom</button>
-            <button class="catalogo-nav-btn" data-artigo="romantic">Romantic</button>
-            <button class="catalogo-nav-btn" data-artigo="romantic-prime">Romantic Prime</button>
-            <button class="catalogo-nav-btn" data-artigo="suplex">Suplex</button>
-            <button class="catalogo-nav-btn" data-artigo="tule">Tule</button>
-            <button class="catalogo-nav-btn" data-artigo="valentino">Valentino</button>
-            <button class="catalogo-nav-btn" data-artigo="viscolycra">Viscolycra</button>
-        </nav>
+<section class="catalogo-container" id="catalogo-nativo">
+    <!-- ========================================================================
+         HEADER DO FILTRO - BOTÃO TODOS + BUSCADOR
+         ======================================================================== -->
+    <div class="catalogo-header">
+        <div class="catalogo-header-content">
+            <h2 class="catalogo-titulo">Catálogo Nativo</h2>
+            
+            <div class="catalogo-controls">
+                <!-- Botão TODOS -->
+                <button class="catalogo-btn-todos" onclick="mudarArtigo('todos')">
+                    <i class="fas fa-th"></i> TODOS
+                </button>
+                
+                <!-- Buscador -->
+                <div class="catalogo-search-wrapper">
+                    <i class="fas fa-search"></i>
+                    <input 
+                        type="text" 
+                        id="catalogo-search" 
+                        class="catalogo-search-input" 
+                        placeholder="Buscar artigo..."
+                        onkeyup="buscarArtigo(this.value)"
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================
+         FILTROS ORGANIZADOS EM GRID
+         ======================================================================== -->
+    <div class="catalogo-filtros-grid">
+        <button class="catalogo-filtro-btn active" data-artigo="todos" onclick="mudarArtigo('todos')">TODOS</button>
+        <button class="catalogo-filtro-btn" data-artigo="barbie" onclick="mudarArtigo('barbie')">BARBIE</button>
+        <button class="catalogo-filtro-btn" data-artigo="cotton-listrado" onclick="mudarArtigo('cotton-listrado')">COTTON LISTRADO</button>
+        <button class="catalogo-filtro-btn" data-artigo="crepe-liverpool" onclick="mudarArtigo('crepe-liverpool')">CREPE LIVERPOOL</button>
+        <button class="catalogo-filtro-btn" data-artigo="dry-fit-colmeia" onclick="mudarArtigo('dry-fit-colmeia')">DRY FIT COLMEIA</button>
+        <button class="catalogo-filtro-btn" data-artigo="duna" onclick="mudarArtigo('duna')">DUNA</button>
+        <button class="catalogo-filtro-btn" data-artigo="fio-torcido-listrado" onclick="mudarArtigo('fio-torcido-listrado')">FIO TORCIDO LISTRADO</button>
+        <button class="catalogo-filtro-btn" data-artigo="liganete" onclick="mudarArtigo('liganete')">LIGANETE</button>
+        <button class="catalogo-filtro-btn" data-artigo="london" onclick="mudarArtigo('london')">LONDON</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-algodao" onclick="mudarArtigo('malha-algodao')">MALHA ALGODÃO</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-bale" onclick="mudarArtigo('malha-bale')">MALHA BALE</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-bally" onclick="mudarArtigo('malha-bally')">MALHA BALLY</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-canelada" onclick="mudarArtigo('malha-canelada')">MALHA CANELADA</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-canelada-suede" onclick="mudarArtigo('malha-canelada-suede')">MALHA CANELADA DE SUEDE</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-crepe" onclick="mudarArtigo('malha-crepe')">MALHA CREPE</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-fio-torcido" onclick="mudarArtigo('malha-fio-torcido')">MALHA FIO TORCIDO</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-helanca" onclick="mudarArtigo('malha-helanca')">MALHA HELANCA</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-laisy" onclick="mudarArtigo('malha-laisy')">MALHA LAISY</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-leila-kids" onclick="mudarArtigo('malha-leila-kids')">MALHA LEILA KIDS</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-leila-sublimacao" onclick="mudarArtigo('malha-leila-sublimacao')">MALHA LEILA SUBLIMAÇÃO</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-montaria" onclick="mudarArtigo('malha-montaria')">MALHA MONTARIA</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-pp" onclick="mudarArtigo('malha-pp')">MALHA PP</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-pv" onclick="mudarArtigo('malha-pv')">MALHA PV</button>
+        <button class="catalogo-filtro-btn" data-artigo="malha-suede" onclick="mudarArtigo('malha-suede')">MALHA SUEDE</button>
+        <button class="catalogo-filtro-btn" data-artigo="microfibra" onclick="mudarArtigo('microfibra')">MICROFIBRA</button>
+        <button class="catalogo-filtro-btn" data-artigo="moletom" onclick="mudarArtigo('moletom')">MOLETOM</button>
+        <button class="catalogo-filtro-btn" data-artigo="romantic" onclick="mudarArtigo('romantic')">ROMANTIC</button>
+        <button class="catalogo-filtro-btn" data-artigo="romantic-prime" onclick="mudarArtigo('romantic-prime')">ROMANTIC PRIME</button>
+        <button class="catalogo-filtro-btn" data-artigo="suplex" onclick="mudarArtigo('suplex')">SUPLEX</button>
+        <button class="catalogo-filtro-btn" data-artigo="tule" onclick="mudarArtigo('tule')">TULE</button>
+        <button class="catalogo-filtro-btn" data-artigo="valentino" onclick="mudarArtigo('valentino')">VALENTINO</button>
+        <button class="catalogo-filtro-btn" data-artigo="viscolycra" onclick="mudarArtigo('viscolycra')">VISCOLYCRA</button>
+    </div>
+
+    <!-- ========================================================================
+         GRID DE PRODUTOS - ORGANIZADO E LIMPO
+         ======================================================================== -->
+    <div class="grid-catalogo" id="grid-catalogo">
+        <!-- Os produtos serão renderizados aqui pelo JavaScript -->
+    </div>
+
+    <!-- Mensagem quando nenhum produto é encontrado -->
+    <div id="nenhum-resultado" class="nenhum-resultado" style="display: none;">
+        <p>Nenhum artigo encontrado. Tente outra busca.</p>
+    </div>
+</section>
 
         <!-- Conteúdo do Artigo -->
         <div class="catalogo-content">

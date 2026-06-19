@@ -4,6 +4,21 @@ let catalogoState = {
     currentSlide: {}
 };
 
+// Estado do filtro com busca
+let filtroState = {
+    artigoAtual: 'todos',
+    termoBusca: '',
+    todosOsArtigos: [
+        'todos', 'barbie', 'cotton-listrado', 'crepe-liverpool', 'dry-fit-colmeia',
+        'duna', 'fio-torcido-listrado', 'liganete', 'london', 'malha-algodao',
+        'malha-bale', 'malha-bally', 'malha-canelada', 'malha-canelada-suede',
+        'malha-crepe', 'malha-fio-torcido', 'malha-helanca', 'malha-laisy',
+        'malha-leila-kids', 'malha-leila-sublimacao', 'malha-montaria', 'malha-pp',
+        'malha-pv', 'malha-suede', 'microfibra', 'moletom', 'romantic',
+        'romantic-prime', 'suplex', 'tule', 'valentino', 'viscolycra'
+    ]
+};
+
 // Contar slides automaticamente
 function contarSlidesAutomaticamente() {
     const artigos = {};
@@ -24,10 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
     inicializarNavegacao();
-    // Exibir todos os artigos por padrão
-    if (document.querySelector('[data-artigo="todos"]')) {
-        mudarArtigo('todos');
-    }
+    // Inicializar filtro e busca no catálogo quando disponível
+    inicializarFiltro();
 });
 
 // ============================================================================
@@ -133,77 +146,127 @@ function irParaSlide(artigo, indice) {
 }
 
 // ============================================================================
-// INICIALIZAR NAVEGAÇÃO DE ARTIGOS
+// FILTRO COM BUSCA
 // ============================================================================
 
-function inicializarNavegacao() {
-    const navBtns = document.querySelectorAll('.catalogo-nav-btn');
+function renderizarProdutos() {
+    const nenhumResultado = document.getElementById('nenhum-resultado');
+    const todosProdutos = document.querySelectorAll('.catalogo-artigo[data-artigo]');
+    let produtosVisiveis = 0;
 
-    navBtns.forEach(btn => {
+    todosProdutos.forEach(produto => {
+        const artigoDoProduto = produto.getAttribute('data-artigo');
+        const nomeProduto = produto.querySelector('.artigo-titulo')?.textContent.toLowerCase() || '';
+        const descricaoProduto = produto.querySelector('.artigo-descricao')?.textContent.toLowerCase() || '';
+        let mostrar = false;
+
+        if (filtroState.termoBusca) {
+            mostrar = nomeProduto.includes(filtroState.termoBusca) ||
+                descricaoProduto.includes(filtroState.termoBusca) ||
+                artigoDoProduto.includes(filtroState.termoBusca);
+        } else if (filtroState.artigoAtual === 'todos') {
+            mostrar = true;
+        } else {
+            mostrar = artigoDoProduto === filtroState.artigoAtual;
+        }
+
+        if (mostrar) {
+            produto.style.display = '';
+            produtosVisiveis++;
+        } else {
+            produto.style.display = 'none';
+        }
+    });
+
+    if (nenhumResultado) {
+        nenhumResultado.style.display = produtosVisiveis === 0 ? 'block' : 'none';
+    }
+}
+
+function mudarArtigo(artigo) {
+    filtroState.artigoAtual = artigo;
+    filtroState.termoBusca = '';
+
+    const searchInput = document.getElementById('catalogo-search');
+    if (searchInput) {
+        searchInput.value = '';
+    }
+
+    document.querySelectorAll('.catalogo-filtro-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-artigo') === artigo) {
+            btn.classList.add('active');
+        }
+    });
+
+    renderizarProdutos();
+}
+
+function buscarArtigo(termo) {
+    filtroState.termoBusca = termo.toLowerCase().trim();
+
+    if (!filtroState.termoBusca) {
+        mudarArtigo('todos');
+        return;
+    }
+
+    document.querySelectorAll('.catalogo-filtro-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    renderizarProdutos();
+}
+
+function inicializarFiltro() {
+    const searchInput = document.getElementById('catalogo-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            buscarArtigo(e.target.value);
+        });
+    }
+
+    document.querySelectorAll('.catalogo-filtro-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             const artigo = this.getAttribute('data-artigo');
             mudarArtigo(artigo);
         });
     });
+
+    mudarArtigo('todos');
 }
 
-// ============================================================================
-// MUDAR ARTIGO
-// ============================================================================
+function limparFiltros() {
+    filtroState.artigoAtual = 'todos';
+    filtroState.termoBusca = '';
 
-function mudarArtigo(artigo) {
-    // Remover classe active de todos os botões
-    document.querySelectorAll('.catalogo-nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
+    const searchInput = document.getElementById('catalogo-search');
+    if (searchInput) {
+        searchInput.value = '';
+    }
 
-    // Se for 'todos', mostrar todos os artigos
-    if (artigo === 'todos') {
-        const btnTodos = document.querySelector(`[data-artigo="todos"]`);
-        if (btnTodos) btnTodos.classList.add('active');
+    mudarArtigo('todos');
+}
 
-        document.querySelectorAll('.catalogo-artigo').forEach(art => {
-            art.classList.add('active');
-        });
+function obterArtigosFiltrados() {
+    const todosProdutos = document.querySelectorAll('.catalogo-artigo[data-artigo]');
+    const artigos = [];
 
-        // Resetar slides de todos os artigos
-        Object.keys(catalogoState.artigos).forEach(a => {
-            catalogoState.currentSlide[a] = 0;
-            irParaSlide(a, 0);
-        });
-
-        const catalogoSection = document.getElementById('catalogo-nativo');
-        if (catalogoSection) {
-            catalogoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    todosProdutos.forEach(produto => {
+        if (produto.style.display !== 'none') {
+            artigos.push({
+                nome: produto.querySelector('.artigo-titulo')?.textContent || '',
+                artigo: produto.getAttribute('data-artigo')
+            });
         }
-
-        return;
-    }
-
-    // Adicionar classe active ao botão clicado
-    const btn = document.querySelector(`[data-artigo="${artigo}"]`);
-    if (btn) btn.classList.add('active');
-
-    // Remover classe active de todos os artigos e ativar apenas o selecionado
-    document.querySelectorAll('.catalogo-artigo').forEach(art => {
-        art.classList.remove('active');
     });
 
-    const artigoElem = document.querySelector(`[data-artigo="${artigo}"].catalogo-artigo`);
-    if (artigoElem) artigoElem.classList.add('active');
-
-    // Resetar o slide para o primeiro do artigo selecionado
-    if (catalogoState.artigos[artigo]) {
-        catalogoState.currentSlide[artigo] = 0;
-        irParaSlide(artigo, 0);
-    }
-
-    // Scroll suave para o catálogo
-    const catalogoSection = document.getElementById('catalogo-nativo');
-    if (catalogoSection) {
-        catalogoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    return artigos;
 }
+
+window.mudarArtigo = mudarArtigo;
+window.buscarArtigo = buscarArtigo;
+window.limparFiltros = limparFiltros;
+window.obterArtigosFiltrados = obterArtigosFiltrados;
 
 // ============================================================================
 // SUPORTE A TECLADO
