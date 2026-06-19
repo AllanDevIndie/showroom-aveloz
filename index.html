@@ -118,10 +118,12 @@
          ======================================================================== -->
     <div class="catalogo-filtros-grid">
         <button class="catalogo-filtro-btn active" data-artigo="todos" onclick="mudarArtigo('todos')">TODOS</button>
+    
         <button class="catalogo-filtro-btn" data-artigo="barbie" onclick="mudarArtigo('barbie')">BARBIE</button>
         <button class="catalogo-filtro-btn" data-artigo="cotton-listrado" onclick="mudarArtigo('cotton-listrado')">COTTON LISTRADO</button>
         <button class="catalogo-filtro-btn" data-artigo="crepe-liverpool" onclick="mudarArtigo('crepe-liverpool')">CREPE LIVERPOOL</button>
         <button class="catalogo-filtro-btn" data-artigo="dry-fit-colmeia" onclick="mudarArtigo('dry-fit-colmeia')">DRY FIT COLMEIA</button>
+        <button class="catalogo-filtro-btn" data-artigo="dry-grao-de-arroz" onclick="mudarArtigo('dry-grao-de-arroz')">DRY GRAO DE ARROZ</button>
         <button class="catalogo-filtro-btn" data-artigo="duna" onclick="mudarArtigo('duna')">DUNA</button>
         <button class="catalogo-filtro-btn" data-artigo="fio-torcido-listrado" onclick="mudarArtigo('fio-torcido-listrado')">FIO TORCIDO LISTRADO</button>
         <button class="catalogo-filtro-btn" data-artigo="liganete" onclick="mudarArtigo('liganete')">LIGANETE</button>
@@ -255,8 +257,33 @@
             </div>
         <!-- Copiar até aqui para o próximo artigo -->
 
+                    <!-- dry grao de arroz-->
+            <div class="catalogo-artigo active" data-artigo="dry-grao-de-arroz">
+                <div class="artigo-header">
+                    <h2 class="artigo-titulo">Dry Grão de Arroz</h2>
+                    <p class="artigo-codigo">Cód. 003</p>
+                </div>
+                <div class="artigo-descricao">
+                    <p>Descrição do artigo Dry Grão de Arroz.</p>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <div class="slider" id="slider-dry-grao-de-arroz">
+                            <img src="img/catalogo/dry-grao-de-arroz/foto-1.jpg" alt="Dry Grão de Arroz - Foto 1" class="slide-img">
+                            <img src="img/catalogo/dry-grao-de-arroz/foto-2.jpg" alt="Dry Grão de Arroz - Foto 2" class="slide-img">
+                    </div>
+                    <button class="slider-btn slider-prev" onclick="mudarSlide(this, -1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn slider-next" onclick="mudarSlide(this, 1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="slider-dots" id="dots-dry-grao-de-arroz"></div>
+                </div>
+            </div>
+        <!-- Copiar até aqui para o próximo artigo -->
 
-                    <!-- dry fit colmeia-->
+                            <!-- dry fit colmeia-->
             <div class="catalogo-artigo active" data-artigo="dry-fit-colmeia">
                 <div class="artigo-header">
                     <h2 class="artigo-titulo">Dry Fit Colmeia</h2>
