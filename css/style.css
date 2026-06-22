@@ -987,6 +987,8 @@ img {
 .catalogo-artigo {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
+background: #F8F9FA;
+background: linear-gradient(177deg, rgba(248, 249, 250, 1) 0%, rgba(186, 186, 186, 1) 100%);
 }
 
 .catalogo-artigo.active {
@@ -1058,6 +1060,7 @@ img {
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    padding: 30px;
 }
 
 .slider-wrapper {
