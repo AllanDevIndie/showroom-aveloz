@@ -124,3 +124,25 @@ function enviarPedidoWhatsApp() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', carregarCarrinhoSalvo);
+
+
+// Pega o botão
+var btn = document.getElementById("btnTopo");
+
+// Quando o usuário rola a página, aciona a função
+window.onscroll = function() {rolar()};
+
+function rolar() {
+  // Se a rolagem for maior que 100px, mostra o botão, senão esconde
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+}
+
+// Função de clique para voltar ao topo
+function voltarAoTopo() {
+  document.body.scrollTop = 0; // Para Safari
+  document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+}

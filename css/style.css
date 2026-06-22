@@ -741,7 +741,7 @@ img {
 .carrinho-container {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 100px;
     width: 320px;
     background: #fff;
     border-radius: 15px;
@@ -1781,4 +1781,29 @@ background: linear-gradient(177deg, rgba(248, 249, 250, 1) 0%, rgba(186, 186, 18
     100% {
         transform: scale(1);
     }
+}
+html {
+  scroll-behavior: smooth; /* Ativa a rolagem suave nativa */
+}
+
+.botao-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none; /* Fica escondido inicialmente */
+  background-color: var(--primary); /* Cor do botão */
+  color: #fff; /* Cor da seta */
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 45px;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.botao-topo:hover {
+  background-color: var(--dark)
 }
