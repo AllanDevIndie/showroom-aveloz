@@ -34,10 +34,23 @@ function contarSlidesAutomaticamente() {
     return artigos;
 }
 
+function aplicarOtimizacaoImagensCatalogo() {
+    document.querySelectorAll('.catalogo-artigo img, .catalogo-container img, .grid-catalogo img').forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+
+        if (!img.hasAttribute('decoding')) {
+            img.setAttribute('decoding', 'async');
+        }
+    });
+}
+
 // Inicializar o catálogo
 document.addEventListener('DOMContentLoaded', function () {
     catalogoState.artigos = contarSlidesAutomaticamente();
     inicializarCatalogo();
+    aplicarOtimizacaoImagensCatalogo();
     // Inicializar filtro e busca no catálogo quando disponível
     inicializarFiltro();
 });

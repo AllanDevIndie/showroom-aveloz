@@ -109,7 +109,7 @@ function renderizarProdutos(lista) {
 
         card.innerHTML = `
             <div class="img-container">
-                <img src="${fotoPrincipal}" alt="${p.nome}" loading="lazy">
+                <img src="${fotoPrincipal}" alt="${p.nome}" loading="lazy" decoding="async">
             </div>
             <div class="produto-info">
                 <div class="produto-header">
